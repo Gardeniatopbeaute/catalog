@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serenity Spa | Nos Prestations</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;700&display=swap');
+
+    /* Palette de couleurs inspirée de votre capture d’écran :
+       - Fond blanc
+       - Texte gris foncé (#333)
+       - Rose pâle (#f5cac3) pour les boutons
+       - Rose plus soutenu (#e0a79a) au survol
+    */
+    :root {
+      --background: #ffffff;
+      --text-color: #333333;
+      --heading-color: #222222;
+      --button-bg: #f5cac3;
+      --button-bg-hover: #e0a79a;
+      --border-color: #f0f0f0;
+      --highlight: #f7ede2; /* Optionnel : zone subtile */
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--background);
+      color: var(--text-color);
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    .luxury-font {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+    }
+
+    /* Header */
+    header {
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Navigation liens */
+    .nav-link {
+      color: var(--text-color);
+      transition: color 0.3s;
+    }
+    .nav-link:hover {
+      color: var(--button-bg);
+    }
+
+    /* Hero Section */
+    .hero-title {
+      color: var(--heading-color);
+    }
+    .hero-subtitle {
+      color: #666666;
+    }
+
+    /* Bouton principal */
+    .btn-primary {
+      background-color: var(--button-bg);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background-color: var(--button-bg-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(224, 167, 154, 0.3);
+    }
+
+    /* Barre de catégories */
+    .category-nav {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .category-nav::-webkit-scrollbar {
+      display: none;
+    }
+    .category-item {
+      position: relative;
+      padding-bottom: 4px;
+      margin-right: 16px;
+      transition: color 0.3s;
+    }
+    .category-item.active,
+    .category-item:hover {
+      color: var(--button-bg);
+    }
+    .category-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: var(--button-bg);
+      transition: width 0.3s, transform 0.3s;
+      transform: translateX(-50%);
+    }
+    .category-item:hover::after,
+    .category-item.active::after {
+      width: 100%;
+    }
+
+    /* Cartes de service */
+    .service-card {
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: #fff;
+    }
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+    .service-image {
+      height: 16rem; /* h-64 */
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .price-tag {
+      background-color: var(--button-bg);
+      color: #fff;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      position: absolute;
+      bottom: 0.5rem;
+      left: 0.5rem;
+    }
+
+    /* Sections titres */
+    .section-title {
+      color: var(--heading-color);
+      font-size: 1.875rem; /* text-3xl */
+      margin-bottom: 0.75rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-subtitle {
+      color: #666666;
+    }
+
+    /* Animation fadeIn (optionnelle) */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in {
+      opacity: 0;
+      animation: fadeIn 0.8s forwards;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #f9f9f9;
+      color: #444;
+    }
+    footer a:hover {
+      color: var(--button-bg);
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="fixed w-full top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-2xl luxury-font">
+        <a href="#" class="flex items-center space-x-2">
+          <i class="fas fa-spa text-soft-pink"></i>
+          <span>Serenity Spa</span>
+        </a>
+      </div>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#" class="nav-link nav-item">Accueil</a>
+        <a href="#" class="nav-link nav-item text-soft-pink font-medium">Nos Prestations</a>
+        <a href="#" class="nav-link nav-item">Notre Équipe</a>
+        <a href="#" class="nav-link nav-item">Contact</a>
+      </nav>
+      <button class="md:hidden text-gray-700">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-24 pb-12 px-4 text-center">
+    <div class="container mx-auto max-w-4xl animate-fade-in">
+      <h1 class="hero-title text-4xl md:text-5xl luxury-font mb-4">Nos Prestations</h1>
+      <p class="hero-subtitle text-lg mb-6">
+        Découvrez notre univers sensoriel dédié à votre bien-être
+      </p>
+      <a href="#contact" class="btn-primary">Prendre rendez-vous</a>
+    </div>
+  </section>
+
+  <!-- Category Navigation -->
+  <div class="sticky top-[76px] bg-white z-30 border-b border-border-color">
+    <div class="container mx-auto px-4 py-2">
+      <div class="category-nav flex overflow-x-auto">
+        <a href="#visage" class="category-item active">Soins du visage</a>
+        <a href="#corps" class="category-item">Soins du corps</a>
+        <a href="#dermopigmentation" class="category-item">Dermopigmentation</a>
+        <a href="#epilation" class="category-item">Épilations</a>
+        <a href="#minceur" class="category-item">Cures minceur</a>
+        <a href="#manucure" class="category-item">Manucures & Pédicures</a>
+        <a href="#spa" class="category-item">Espace Spa</a>
+        <a href="#cadeaux" class="category-item">Cadeaux</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-12 space-y-16">
+    <!-- Soins du visage -->
+    <section id="visage" class="animate-fade-in">
+      <div class="text-center mb-8">
+        <h2 class="section-title luxury-font">Soins du visage</h2>
+        <p class="section-subtitle max-w-xl mx-auto">Des soins sur-mesure pour révéler l'éclat naturel de votre peau</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Carte 1 -->
+        <div class="service-card">
+          <div class="service-image" style="background-image: url('https://via.placeholder.com/600x400');">
+            <span class="price-tag">À partir de 120€</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl luxury-font mb-2">Soin Hydratant Intense</h3>
+            <p class="text-gray-600 mb-4">
+              Un rituel complet pour nourrir et revitaliser les peaux déshydratées.
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">60 min</span>
+              <a href="#" class="text-soft-pink hover:underline font-medium">Détails</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 2 -->
+        <div class="service-card">
+          <div class="service-image" style="background-image: url('https://via.placeholder.com/600x400');">
+            <span class="price-tag">À partir de 150€</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl luxury-font mb-2">Soin Anti-Âge Premium</h3>
+            <p class="text-gray-600 mb-4">
+              Réduit l'apparence des rides et ridules pour une peau visiblement plus lisse.
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">75 min</span>
+              <a href="#" class="text-soft-pink hover:underline font-medium">Détails</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Soins du corps -->
+    <section id="corps" class="animate-fade-in">
+      <div class="text-center mb-8">
+        <h2 class="section-title luxury-font">Soins du corps</h2>
+        <p class="section-subtitle max-w-xl mx-auto">
+          Des rituels enveloppants pour un bien-être global
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Carte 1 -->
+        <div class="service-card">
+          <div class="service-image" style="background-image: url('https://via.placeholder.com/600x400');">
+            <span class="price-tag">À partir de 110€</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl luxury-font mb-2">Massage Relaxant</h3>
+            <p class="text-gray-600 mb-4">
+              Un voyage sensoriel pour libérer les tensions.
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">60 min</span>
+              <a href="#" class="text-soft-pink hover:underline font-medium">Détails</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 2 -->
+        <div class="service-card">
+          <div class="service-image" style="background-image: url('https://via.placeholder.com/600x400');">
+            <span class="price-tag">À partir de 150€</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl luxury-font mb-2">Enveloppement Corps</h3>
+            <p class="text-gray-600 mb-4">
+              Rituel complet hydratant et raffermissant.
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">90 min</span>
+              <a href="#" class="text-soft-pink hover:underline font-medium">Détails</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ... Vous pouvez continuer avec d'autres sections ... -->
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-10 mt-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl luxury-font mb-4">Serenity Spa</h3>
+          <p class="text-gray-500">
+            Un havre de paix dédié à votre bien-être.
+          </p>
+          <div class="mt-4 flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-soft-pink"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-soft-pink"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-soft-pink"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg luxury-font mb-4">Navigation</h4>
+          <ul class="space-y-2 text-gray-500">
+            <li><a href="#" class="hover:text-soft-pink">Accueil</a></li>
+            <li><a href="#" class="hover:text-soft-pink">Nos Prestations</a></li>
+            <li><a href="#" class="hover:text-soft-pink">Notre Équipe</a></li>
+            <li><a href="#" class="hover:text-soft-pink">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg luxury-font mb-4">Contact</h4>
+          <ul class="space-y-2 text-gray-500">
+            <li><i class="fas fa-map-marker-alt mr-2"></i> 12 Rue de la Paix, 75002 Paris</li>
+            <li><i class="fas fa-phone mr-2"></i> 01 23 45 67 89</li>
+            <li><i class="fas fa-envelope mr-2"></i> contact@serenityspa.com</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg luxury-font mb-4">Horaires</h4>
+          <ul class="space-y-2 text-gray-500">
+            <li>Lundi - Vendredi : 9h - 20h</li>
+            <li>Samedi : 9h - 18h</li>
+            <li>Dimanche : Fermé</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-border-color mt-8 pt-4 text-center text-gray-400 text-sm">
+        © 2023 Serenity Spa. Tous droits réservés.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Gestion du menu de catégories : scroll et highlight
+    const categoryItems = document.querySelectorAll('.category-item');
+    categoryItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Retire la classe 'active' de tous
+        categoryItems.forEach(ci => ci.classList.remove('active'));
+        // Ajoute la classe 'active' à l'élément cliqué
+        item.classList.add('active');
+
+        // Défile jusqu'à la section
+        const targetId = item.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        window.scrollTo({
+          top: targetSection.offsetTop - 100,
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Animation au scroll (optionnel)
+    const fadeElements = document.querySelectorAll('.animate-fade-in');
+    const onScrollFadeIn = () => {
+      fadeElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.style.opacity = 1;
+          el.style.transform = 'translateY(0)';
+        }
+      });
+    };
+    window.addEventListener('scroll', onScrollFadeIn);
+    window.addEventListener('load', onScrollFadeIn);
+  </script>
+</body>
+</html>

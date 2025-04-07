@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gardenia Top Beauté | Épilations - Tarifs par Zone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap');
+
+        /* Variables pour le système de tarifs */
+        :root {
+            --background: #ffffff;
+            --text-color: #333333;
+            --heading-color: #222222;
+            --button-bg: #e07a5f;
+            --button-hover: #d1664b;
+            --pink-bg: #f5cac3;
+            --green-border: #3ca564;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f7f4;
+            color: #333;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .bg-luxury {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(241, 234, 226, 0.9) 100%);
+        }
+
+        /* Header & Navigation */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #d4af37;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://images.unsplash.com/photo-1599058917210-1d4a9d81a517?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Onglets */
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 0.375rem;
+            background-color: var(--background);
+            transition: background-color 0.3s;
+        }
+
+        .tab-btn.active,
+        .tab-btn:hover {
+            background-color: var(--button-bg);
+            color: #fff;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Tableau des tarifs */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th,
+        td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: var(--pink-bg);
+            color: #fff;
+            font-size: 1.125rem;
+        }
+
+        .privilege {
+            border-left: 4px solid var(--green-border);
+            color: var(--green-border);
+        }
+    </style>
+</head>
+
+<body class="bg-luxury">
+    <!-- Header -->
+    <header class="sticky-nav py-4">
+        <div class="container mx-auto px-4">
+            <!-- On gère l'espacement via space-x-6 -->
+            <nav class="flex justify-center items-center overflow-visible space-x-6">
+
+                <!-- Soins du visage (avec dropdown) -->
+                <div class="relative group">
+                    <!-- Lien principal -->
+                    <a href="main2.html" class="category-item inline-flex items-center">
+                        Accueil
+                        <i class="fas fa-chevron-down text-xs ml-1"></i>
+                    </a>
+                    
+                </div>
+
+                <!-- Soins du visage (avec dropdown) -->
+                <div class="relative group">
+                    <!-- Lien principal -->
+                    <a href="soin-du-visage.html" class="category-item inline-flex items-center">
+                        Soins du visage
+                        <i class="fas fa-chevron-down text-xs ml-1"></i>
+                    </a>
+                    <!-- Sous-menu -->
+                    <div
+                        class="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-sm z-10 border border-gray-100">
+                        <a href="soin-du-visage.html"
+                            class="block px-4 py-3 text-gray-600 hover:bg-gray-50 border-b border-gray-100">
+                            Classique
+                        </a>
+                        <a href="soin-corrections.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50">
+                            Dermo-esthétique
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Soins du corps (avec dropdown) -->
+                <div class="relative group">
+                    <a href="soin-du-corps.html" class="category-item inline-flex items-center">
+                        Soins du corps
+                        <i class="fas fa-chevron-down text-xs ml-1"></i>
+                    </a>
+                    <div
+                        class="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-sm z-10 border border-gray-100">
+                        <a href="soin-corps-relaxants.html"
+                            class="block px-4 py-3 text-gray-600 hover:bg-gray-50 border-b border-gray-100">
+                            Relaxant
+                        </a>
+                        <a href="soin-crops-minceur.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50">
+                            Minceur
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Épilations (avec dropdown) -->
+                <div class="relative group">
+                    <a href="#" class="category-item inline-flex items-center">
+                        Épilations
+                        <i class="fas fa-chevron-down text-xs ml-1"></i>
+                    </a>
+                    <div
+                        class="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-sm z-10 border border-gray-100">
+                        <a href="epilation.html"
+                            class="block px-4 py-3 text-gray-600 hover:bg-gray-50 border-b border-gray-100">
+                            Epilation à la cire
+                        </a>
+                        <a href="epilation-laser.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50">
+                            Epilation laser
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Idée Cadeaux (avec dropdown) -->
+                <div class="relative group">
+                    <a href="#" class="category-item inline-flex items-center">
+                        Idée Cadeaux
+                        <i class="fas fa-chevron-down text-xs ml-1"></i>
+                    </a>
+                    <div
+                        class="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-sm z-10 border border-gray-100">
+                        <a href="cheque-cadeau.html"
+                            class="block px-4 py-3 text-gray-600 hover:bg-gray-50 border-b border-gray-100">
+                            Chèque cadeau
+                        </a>
+                        <a href="idee-cadeau.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50">
+                            Formule cadeaux
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Liens directs (sans dropdown) -->
+                <a href="spa.html" class="category-item">
+                    Espace Spa
+                </a>
+                <a href="dermo.html" class="category-item">
+                    Dermopigmentation
+                </a>
+                <a href="manicure-pedicure.html" class="category-item">
+                    Manucures & Pédicures
+                </a>
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero py-20 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl luxury-font mb-6 animate-fadeIn">Tarifs par Zone - Épilations</h1>
+            <p class="text-xl max-w-2xl mx-auto mb-8">Des prix clairs pour chaque zone d'épilation, adaptés à vos
+                besoins.</p>
+        </div>
+    </section>
+
+    
+
+    <!-- Bloc d'informations sur l'épilation laser -->
+    <section class="py-10 px-6 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <h3 class="text-2xl luxury-font text-gray-800 mb-6 text-center">Qu’est-ce que la dermopigmentation des sourcils ?</h3>
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 md:p-8">
+                <p class="text-gray-700 mb-4">Le maquillage permanent est une technique qui
+                    permet, à l'aide de très fines aiguilles, de pigmenter
+                    la peau en surface du derme. <br><br>
+                    
+                    
+                     Les pigments stériles organiques synthétiques et
+                    les injectent dans la peau grâce à une aiguille d'une
+                    extrême finesse (modules stériles à usage unique). <br><br>
+                    
+                    
+                         Cette technique perdure de 6 à 24 mois et nécessite
+                        une retouche maximum 3 mois après l'intervention en
+                        fonction du degré d'absorption de la peau.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content : Tarifs par Zone -->
+    <section class="py-12 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl luxury-font text-gray-800 mb-8 text-center">Tarifs par Zone</h2>
+            <!-- Navigation par onglets -->
+            <div class="flex justify-center mb-8 space-x-2">
+                <button data-tab="visage" class="tab-btn active">Dermopigmentation</button>
+                <button data-tab="corps" class="tab-btn">Eye liner (sur devis)</button>
+            </div>
+
+            <!-- Contenu des onglets -->
+            <div id="visage" class="tab-content active">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Zones</th>
+                            <th>Tarifs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Effet poudré ou poil à poil</td>
+                            <td>365€</td>
+                        </tr>
+                        <tr>
+                            <td>Retouche intensification</td>
+                            <td>265€</td>
+                        </tr>
+                        <tr>
+                            <td>    Grain de beauté</td>
+                            <td>95€</td>
+                        </tr>
+                        <tr>
+                            <td>    Epilation des sourcils</td>
+                            <td>10€</td>
+                        </tr>
+                        <!-- Ajoutez d'autres lignes si nécessaire -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="corps" class="tab-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Zones</th>
+                            <th>Tarifs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>    Ras de cils supérieurs</td>
+                            <td>200€</td>
+                        </tr>
+                        <tr>
+                            <td>    Ras de cils inférieurs</td>
+                            <td>200€</td>
+                        </tr>
+                        <!-- Ajoutez d'autres lignes si nécessaire -->
+                    </tbody>
+                </table>
+            </div>
+
+           
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-12 px-6 bg-gray-50">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl luxury-font text-center mb-12">Questions Fréquentes</h2>
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <button class="flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium">Combien de temps durent les résultats des épilations ?</h3>
+                        <i class="fas fa-chevron-down text-gold-600 ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-3 text-gray-600 hidden">
+                        <p>Les résultats varient selon la technique utilisée et le type de peau. Généralement, ils
+                            durent de 3 à 6 semaines.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <button class="flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium">La douleur est-elle importante lors d'une épilation ?</h3>
+                        <i class="fas fa-chevron-down text-gold-600 ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-3 text-gray-600 hidden">
+                        <p>Les techniques modernes minimisent la douleur. Une légère gêne peut être ressentie, notamment
+                            avec la cire chaude.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <button class="flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium">Quels sont les risques d'une épilation au laser ?</h3>
+                        <i class="fas fa-chevron-down text-gold-600 ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-3 text-gray-600 hidden">
+                        <p>Lorsqu'elle est effectuée par un professionnel, l'épilation au laser est sûre. Suivez bien
+                            les consignes pré et post-traitement.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <button class="flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium">Combien de séances sont nécessaires pour une épilation
+                            définitive ?</h3>
+                        <i class="fas fa-chevron-down text-gold-600 ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-3 text-gray-600 hidden">
+                        <p>Pour l'épilation au laser, une série de 6 à 8 séances est généralement recommandée pour
+                            obtenir des résultats optimaux.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Bottom -->
+    <section class="py-16 px-6 bg-gold-600 text-black text-center">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl luxury-font mb-6">Prête à révéler votre éclat naturel ?</h2>
+            <p class="text-xl mb-8">Contactez-nous pour une consultation personnalisée et découvrez la solution qui vous
+                convient.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl luxury-font mb-4">Gardenia Top Beauté</h3>
+                    <p class="text-gray-400">Votre espace de beauté et de bien-être.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg luxury-font mb-4">Nos Prestations</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Soins du Visage</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Soins du Corps</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Épilations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Massages</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg luxury-font mb-4">Informations</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">À propos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Équipe</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Carrières</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg luxury-font mb-4">Contact</h4>
+                    <address class="text-gray-400 not-italic">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> 123 Avenue du Luxe, Paris</p>
+                        <p class="my-2"><i class="fas fa-phone mr-2"></i> +33 1 23 45 67 89</p>
+                        <p><i class="fas fa-envelope mr-2"></i> contact@gardeniatopbeaute.fr</p>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 Gardenia Top Beauté. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Gestion des onglets
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabButtons.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminescence | Catalogue Prestige</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f4ee;
+            color: #4a3f35;
+        }
+        
+        .title-font {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+        
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+        }
+        
+        .gold-accent {
+            color: #b89f7b;
+        }
+        
+        .image-placeholder {
+            background: linear-gradient(135deg, #f1e9dd, #e5d9c3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .image-placeholder::after {
+            content: "Image illustrative";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #b89f7b;
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+        
+        .price-tag {
+            color: #4a3f35;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, rgba(184,159,123,0.1), rgba(184,159,123,0.5), rgba(184,159,123,0.1));
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="py-12 bg-white bg-opacity-95">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center">
+                <div class="mb-8 text-center">
+                    <h1 class="title-font text-5xl md:text-6xl font-medium mb-2 text-[#4a3f35]">
+                        <span class="gold-accent">Luminescence</span>
+                    </h1>
+                    <p class="text-lg text-[#b89f7b] tracking-widest">INSTITUT DE BEAUTÉ & SPA</p>
+                </div>
+                <div class="max-w-2xl text-center">
+                    <p class="text-[#6b5d4d] italic text-lg leading-relaxed">
+                        "Un havre de paix dédié à votre bien-être, où chaque rituel est une ode à la beauté naturelle et à l'harmonie des sens."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Grid -->
+    <main class="py-16 bg-[#f8f4ee]">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Soin Visage 1 -->
+                <div class="service-card rounded-lg overflow-hidden">
+                    <div class="image-placeholder h-64 w-full"></div>
+                    <div class="p-6">
+                        <h3 class="title-font text-2xl font-semibold text-[#4a3f35] mb-3">Rituel Éclat Sublime</h3>
+                        <p class="text-[#6b5d4d] mb-4">
+                            Un soin complet alliant techniques expertes et actifs d'exception pour révéler la lumière naturelle de votre peau.
+                        </p>
+                        <p class="price-tag gold-accent">À partir de 110€</p>
+                    </div>
+                </div>
+                
+                <!-- Soin Visage 2 -->
+                <div class="service-card rounded-lg overflow-hidden">
+                    <div class="image-placeholder h-64 w-full"></div>
+                    <div class="p-6">
+                        <h3 class="title-font text-2xl font-semibold text-[#4a3f35] mb-3">Rituel Jeunesse Dorée</h3>
+                        <p class="text-[#6b5d4d] mb-4">
+                            Une alliance de gestes liftants et de soins régénérants pour préserver l'élasticité et la fermeté de la peau.
+                        </p>
+                        <p class="price-tag gold-accent">À partir de 140€</p>
+                    </div>
+                </div>
+                
+                <!-- Massage 1 -->
+                <div class="service-card rounded-lg overflow-hidden">
+                    <div class="image-placeholder h-64 w-full"></div>
+                    <div class="p-6">
+                        <h3 class="title-font text-2xl font-semibold text-[#4a3f35] mb-3">Massage Harmonique</h3>
+                        <p class="text-[#6b5d4d] mb-4">
+                            Un enchaînement de mouvements fluides pour dissoudre les tensions et rétablir l'équilibre énergétique.
+                        </p>
+                        <p class="price-tag gold-accent">À partir de 90€</p>
+                    </div>
+                </div>
+                
+                <!-- Massage 2 -->
+                <div class="service-card rounded-lg overflow-hidden">
+                    <div class="image-placeholder h-64 w-full"></div>
+                    <div class="p-6">
+                        <h3 class="title-font text-2xl font-semibold text-[#4a3f35] mb-3">Massage Précieux</h3>
+                        <p class="text-[#6b5d4d] mb-4">
+                            Une expérience sensorielle utilisant des huiles précieuses pour nourrir la peau et apaiser l'esprit.
+                        </p>
+                        <p class="price-tag gold-accent">À partir de 120€</p>
+                    </div>
+                </div>
+                
+                <!-- Soin Corps -->
+                <div class="service-card rounded-lg overflow-hidden">
+                    <div class="image-placeholder h-64 w-full"></div>
+                    <div class="p-6">
+                        <h3 class="title-font text-2xl font-semibold text-[#4a3f35] mb-3">Enveloppement Nourrissant</h3>
+                        <p class="text-[#6b5d4d] mb-4">
+                            Un rituel de beauté complet pour hydrater, adoucir et régénérer la peau en profondeur.
+                        </p>
+                        <p class="price-tag gold-accent">À partir de 95€</p>
+                    </div>
+                </div>
+                
+                <!-- Épilations -->
+                <div class="service-card rounded-lg overflow-hidden">
+                    <div class="image-placeholder h-64 w-full"></div>
+                    <div class="p-6">
+                        <h3 class="title-font text-2xl font-semibold text-[#4a3f35] mb-3">Épilations Expertes</h3>
+                        <p class="text-[#6b5d4d] mb-4">
+                            Des techniques douces et précises pour une peau parfaitement lisse, sans irritation.
+                        </p>
+                        <p class="price-tag gold-accent">À partir de 50€</p>
+                    </div>
+                </div>
+                
+                <!-- Onglerie -->
+                <div class="service-card rounded-lg overflow-hidden">
+                    <div class="image-placeholder h-64 w-full"></div>
+                    <div class="p-6">
+                        <h3 class="title-font text-2xl font-semibold text-[#4a3f35] mb-3">Onglerie Prestige</h3>
+                        <p class="text-[#6b5d4d] mb-4">
+                            Un soin complet des mains et des ongles pour une beauté raffinée et durable.
+                        </p>
+                        <p class="price-tag gold-accent">À partir de 65€</p>
+                    </div>
+                </div>
+                
+                <!-- Formule -->
+                <div class="service-card rounded-lg overflow-hidden">
+                    <div class="image-placeholder h-64 w-full"></div>
+                    <div class="p-6">
+                        <h3 class="title-font text-2xl font-semibold text-[#4a3f35] mb-3">Journée Lumière</h3>
+                        <p class="text-[#6b5d4d] mb-4">
+                            Une immersion complète dans l'univers Luminescence combinant soins visage, massage et rituel de beauté.
+                        </p>
+                        <p class="price-tag gold-accent">À partir de 250€</p>
+                    </div>
+                </div>
+                
+                <!-- Soin Spécial -->
+                <div class="service-card rounded-lg overflow-hidden">
+                    <div class="image-placeholder h-64 w-full"></div>
+                    <div class="p-6">
+                        <h3 class="title-font text-2xl font-semibold text-[#4a3f35] mb-3">Rituel Signature</h3>
+                        <p class="text-[#6b5d4d] mb-4">
+                            Notre soin emblématique, une symphonie de gestes experts et de produits d'exception.
+                        </p>
+                        <p class="price-tag gold-accent">À partir de 180€</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="divider my-20"></div>
+            
+            <!-- Additional Info -->
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="title-font text-3xl text-[#4a3f35] mb-8">Nos Engagements</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <div class="text-4xl gold-accent mb-4"><i class="fas fa-spa"></i></div>
+                        <h4 class="title-font text-xl text-[#4a3f35] mb-2">Produits d'Exception</h4>
+                        <p class="text-[#6b5d4d]">Des formulations uniques à base d'ingrédients nobles et naturels.</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl gold-accent mb-4"><i class="fas fa-hands"></i></div>
+                        <h4 class="title-font text-xl text-[#4a3f35] mb-2">Expertise</h4>
+                        <p class="text-[#6b5d4d]">Des praticiennes diplômées et formées aux techniques les plus pointues.</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl gold-accent mb-4"><i class="fas fa-heart"></i></div>
+                        <h4 class="title-font text-xl text-[#4a3f35] mb-2">Approche Holistique</h4>
+                        <p class="text-[#6b5d4d]">Une vision globale du bien-être qui allie beauté et harmonie intérieure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-white bg-opacity-95">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center">
+                <div class="mb-8 text-center">
+                    <h2 class="title-font text-4xl font-medium text-[#4a3f35]">
+                        <span class="gold-accent">Luminescence</span>
+                    </h2>
+                    <p class="text-sm text-[#b89f7b] tracking-widest mt-2">INSTITUT DE BEAUTÉ & SPA</p>
+                </div>
+                <div class="text-center text-[#6b5d4d] text-sm">
+                    <p>12 Avenue des Jardins • 75008 Paris</p>
+                    <p class="mt-1">01 45 67 89 10 • contact@luminescence.com</p>
+                    <p class="mt-4">Ouvert du mardi au samedi de 10h à 19h</p>
+                    <div class="divider my-6 w-32 mx-auto"></div>
+                    <p>© 2023 Luminescence. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardenia Top Beauté | Prestations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f7f4;
+            color: #333;
+        }
+
+        .luxury-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .treatment-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .treatment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .gold-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        }
+
+        .bg-luxury {
+            background: linear-gradient(135deg, #f9f7f4 0%, #e8e6e1 100%);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #d4af37;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .treatment-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .duration-badge {
+            background-color: rgba(212, 175, 55, 0.2);
+            border: 1px solid #d4af37;
+        }
+
+        .price-tag {
+            background: linear-gradient(135deg, #d4af37 0%, #f1da7a 100%);
+        }
+
+        .benefit-item {
+            position: relative;
+            padding-left: 28px;
+        }
+
+        .benefit-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 18px;
+            height: 18px;
+            background-color: #d4af37;
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .benefit-item:after {
+            content: '✓';
+            position: absolute;
+            left: 4px;
+            top: 3px;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-luxury">
+    <!-- Header -->
+    <header class="sticky-nav py-4">
+        <div class="container mx-auto px-4">
+            <!-- On gère l'espacement via space-x-6 -->
+            <nav class="flex justify-center items-center overflow-visible space-x-6">
+
+                <!-- Soins du visage (avec dropdown) -->
+                <div class="relative group">
+                    <!-- Lien principal -->
+                    <a href="main2.html" class="category-item inline-flex items-center">
+                        Accueil
+                        <i class="fas fa-chevron-down text-xs ml-1"></i>
+                    </a>
+                    
+                </div>
+
+                <!-- Soins du visage (avec dropdown) -->
+                <div class="relative group">
+                    <!-- Lien principal -->
+                    <a href="soin-du-visage.html" class="category-item inline-flex items-center">
+                        Soins du visage
+                        <i class="fas fa-chevron-down text-xs ml-1"></i>
+                    </a>
+                    <!-- Sous-menu -->
+                    <div
+                        class="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-sm z-10 border border-gray-100">
+                        <a href="soin-du-visage.html"
+                            class="block px-4 py-3 text-gray-600 hover:bg-gray-50 border-b border-gray-100">
+                            Classique
+                        </a>
+                        <a href="soin-corrections.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50">
+                            Dermo-esthétique
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Soins du corps (avec dropdown) -->
+                <div class="relative group">
+                    <a href="soin-du-corps.html" class="category-item inline-flex items-center">
+                        Soins du corps
+                        <i class="fas fa-chevron-down text-xs ml-1"></i>
+                    </a>
+                    <div
+                        class="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-sm z-10 border border-gray-100">
+                        <a href="soin-corps-relaxants.html"
+                            class="block px-4 py-3 text-gray-600 hover:bg-gray-50 border-b border-gray-100">
+                            Relaxant
+                        </a>
+                        <a href="soin-crops-minceur.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50">
+                            Minceur
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Épilations (avec dropdown) -->
+                <div class="relative group">
+                    <a href="#" class="category-item inline-flex items-center">
+                        Épilations
+                        <i class="fas fa-chevron-down text-xs ml-1"></i>
+                    </a>
+                    <div
+                        class="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-sm z-10 border border-gray-100">
+                        <a href="epilation.html"
+                            class="block px-4 py-3 text-gray-600 hover:bg-gray-50 border-b border-gray-100">
+                            Epilation à la cire
+                        </a>
+                        <a href="epilation-laser.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50">
+                            Epilation laser
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Idée Cadeaux (avec dropdown) -->
+                <div class="relative group">
+                    <a href="#" class="category-item inline-flex items-center">
+                        Idée Cadeaux
+                        <i class="fas fa-chevron-down text-xs ml-1"></i>
+                    </a>
+                    <div
+                        class="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-sm z-10 border border-gray-100">
+                        <a href="cheque-cadeau.html"
+                            class="block px-4 py-3 text-gray-600 hover:bg-gray-50 border-b border-gray-100">
+                            Chèque cadeau
+                        </a>
+                        <a href="idee-cadeau.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50">
+                            Formule cadeaux
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Liens directs (sans dropdown) -->
+                <a href="spa.html" class="category-item">
+                    Espace Spa
+                </a>
+                <a href="dermo.html" class="category-item">
+                    Dermopigmentation
+                </a>
+                <a href="manicure-pedicure.html" class="category-item">
+                    Manucures & Pédicures
+                </a>
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- Category Hero -->
+    <section class="treatment-hero py-20 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl luxury-font mb-6 animate-fadeIn">Soins du corps relaxant</h1>
+            <p class="text-xl max-w-2xl mx-auto mb-8">Découvrez la beauté naturelle de votre peau grâce à nos soins experts !</p>
+            <div class="flex justify-center space-x-4">
+                <span class="duration-badge px-4 py-2 rounded-full text-sm">Durée: 30-60 min</span>
+                <span class="price-tag px-4 py-2 rounded-full text-sm font-medium">À partir de 75€</span>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Main Content -->
+    <section class="py-12 px-6">
+        <div class="container mx-auto">
+            <!-- Grille à 3 colonnes : 2 pour les soins, 1 pour les forfaits spéciaux -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Colonne gauche : Soins du visage -->
+                <div class="lg:col-span-2">
+                    <h2 class="text-3xl luxury-font text-gray-800 mb-8">Nos soins du corps relaxant</h2>
+
+                    <!-- Traitement 1 -->
+                    <div class="treatment-card bg-white mb-8 animate-fadeIn" style="animation-delay: 0.1s;">
+                        <div class="md:flex">
+                            <div class="md:w-1/3 h-48 md:h-auto bg-cover bg-center"
+                                style="background-image: url('soincorpsrelax/califjpeg_63c7e0b5c3e34.jpeg');">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl luxury-font">Massage Signature décontractant</h3>
+                                    <span class="text-gold-600 font-medium">95€</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-500 mb-4">
+                                    <i class="fas fa-clock mr-2"></i>
+                                    <span>60 minutes</span>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Le massage Signature Décontractant offre une
+                                    détente totale grâce à la combinaison des ventouses
+                                    vacuum et des pierres chaudes. Ce mélange procure
+                                    une relaxation profonde, des muscles détendus, une
+                                    meilleure circulation et une peau plus douce.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Traitement 2 -->
+                    <div class="treatment-card bg-white mb-8 animate-fadeIn" style="animation-delay: 0.2s;">
+                        <div class="md:flex">
+                            <div class="md:w-1/3 h-48 md:h-auto bg-cover bg-center"
+                                style="background-image: url('soincorpsrelax/Miracle_20Touch.jpg');">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl luxury-font">Massage modelant Créatif</h3>
+                                    <span class="text-gold-600 font-medium">85€</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-500 mb-4">
+                                    <i class="fas fa-clock mr-2"></i>
+                                    <span>60 minutes</span>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Le Massage Modelant Créatif est idéal pour
+                                    se détendre. Ce soin personnalisé combine
+                                    plusieurs techniques pour relâcher les
+                                    tensions, améliorer la circulation et redonner
+                                    de l'énergie à tout le corps.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Traitement 3 -->
+                    <div class="treatment-card bg-white mb-8 animate-fadeIn" style="animation-delay: 0.3s;">
+                        <div class="md:flex">
+                            <div class="md:w-1/3 h-48 md:h-auto bg-cover bg-center"
+                                style="background-image: url('soincorpsrelax/65496284_2494583713925597_5636723110859243520_n.jpg');">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl luxury-font">Gommage</h3>
+                                    <span class="text-gold-600 font-medium">75€</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-500 mb-4">
+                                    <i class="fas fa-clock mr-2"></i>
+                                    <span>30 minutes</span>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Le gommage au sel de Guérande est plus abrasif, idéal
+                                    pour une exfoliation en profondeur. Le gommage à la
+                                    crème exfoliante est plus doux, parfait pour les peaux
+                                    sensibles. Ces gommages éliminent efficacement les
+                                    impuretés, les cellules mortes et l'excès de sébum.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="treatment-card bg-white mb-8 animate-fadeIn" style="animation-delay: 0.3s;">
+                        <div class="md:flex">
+                            <div class="md:w-1/3 h-48 md:h-auto bg-cover bg-center"
+                                style="background-image: url('soincorpsrelax/profitez-de-soins-de-spa.jpg');">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl luxury-font">Balnéothérapie</h3>
+                                    <span class="text-gold-600 font-medium">75€</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-500 mb-4">
+                                    <i class="fas fa-clock mr-2"></i>
+                                    <span>30 minutes</span>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    La Balnéothérapie est une technique qui soulage les
+                                    douleurs : l’association de l’eau, de la chaleur et des
+                                    jets apaise les douleurs articulaires et les
+                                    contractures musculaires. L’effet d’apesanteur de
+                                    l’eau réduit les contraintes sur les articulations et offre
+                                    une sensation de légèreté.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    
+
+                    
+
+                    <!-- Autres traitements ... -->
+                    <!-- Vous pouvez ajouter d'autres cartes de soins ici -->
+
+                </div>
+
+                <!-- Colonne droite : Forfaits Spéciaux -->
+                <div>
+                    <h3 class="text-2xl luxury-font text-gray-800 mb-6">Forfaits & cures soins relaxants</h3>
+                    <div class="grid grid-cols-1 gap-6">
+                        <!-- Package 1 -->
+                        
+                        <!-- Package 2 -->
+                        
+
+                        <!-- Package 2 -->
+                        <div class="treatment-card relative bg-white p-6 border-l-4 border-gold-600">
+                            <!-- Badge Promo -->
+                            <!-- <div -->
+                                <!-- class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-bl"> -->
+                                <!-- Promo</div> -->
+                            <h4 class="text-xl luxury-font mb-2">Cure reflexologie plantaire & bain de pieds / 3 soins</h4>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <!-- <span class="line-through text-gray-400 mr-2">765€</span> -->
+                                    <span class="text-gold-600 font-medium text-xl">256€</span>
+                                </div>
+                                <!-- <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Économisez -->
+                                    <!-- 110€</span> -->
+                            </div>
+                        </div>
+
+                        <!-- Package 2 -->
+                        <div class="treatment-card relative bg-white p-6 border-l-4 border-gold-600">
+                            <!-- Badge Promo -->
+                            <!-- <div -->
+                                <!-- class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-bl"> -->
+                                <!-- Promo</div> -->
+                            <h4 class="text-xl luxury-font mb-2">Forfait 4 massages aux choix relaxants - 1h</h4>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <!-- <span class="line-through text-gray-400 mr-2">570€</span> -->
+                                    <span class="text-gold-600 font-medium text-xl">360€</span>
+                                </div>
+                                <!-- <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Économisez -->
+                                    <!-- 110€</span> -->
+                            </div>
+                        </div>
+
+                        <!-- Package 2 -->
+                        <div class="treatment-card relative bg-white p-6 border-l-4 border-gold-600">
+                            <!-- Badge Promo -->
+                            <!-- <div -->
+                                <!-- class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-bl"> -->
+                                <!-- Promo</div> -->
+                            <h4 class="text-xl luxury-font mb-2">Forfait 4 soins différents aux choix / -30min</h4>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <!-- <span class="line-through text-gray-400 mr-2">1290€</span> -->
+                                    <span class="text-gold-600 font-medium text-xl">248€</span>
+                                </div>
+                                <!-- <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Économisez -->
+                                    <!-- 110€</span> -->
+                            </div>
+                        </div>
+                        <!-- Vous pouvez ajouter d'autres forfaits si nécessaire -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-12 px-6 bg-gray-50">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl luxury-font text-center mb-12">Questions Fréquentes</h2>
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <button class="flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium">Combien de temps durent les résultats des soins ?</h3>
+                        <i class="fas fa-chevron-down text-gold-600 ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-3 text-gray-600 hidden">
+                        <p>Les résultats varient selon le soin et votre type de peau. Généralement, les effets immédiats
+                            durent 5-7 jours, tandis que les bénéfices à long terme s'accumulent avec des séances
+                            régulières. Nous recommandons un soin mensuel pour des résultats optimaux.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <button class="flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium">Les soins conviennent-ils à tous les types de peau ?</h3>
+                        <i class="fas fa-chevron-down text-gold-600 ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-3 text-gray-600 hidden">
+                        <p>Absolument. Avant chaque soin, notre esthéticienne effectue une analyse approfondie de votre
+                            peau pour adapter le traitement à vos besoins spécifiques. Nous disposons de solutions pour
+                            tous types de peau.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <button class="flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium">Y a-t-il un temps de récupération après les soins ?</h3>
+                        <i class="fas fa-chevron-down text-gold-600 ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-3 text-gray-600 hidden">
+                        <p>La plupart de nos soins sont non invasifs et ne nécessitent aucun temps de récupération. Vous
+                            pouvez reprendre vos activités immédiatement après. Certains soins plus intenses peuvent
+                            provoquer une légère rougeur qui disparaît en 1-2 heures.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <button class="flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium">Puis-je me maquiller après le soin ?</h3>
+                        <i class="fas fa-chevron-down text-gold-600 ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-3 text-gray-600 hidden">
+                        <p>Oui, vous pouvez vous maquiller immédiatement après la plupart de nos soins. Notre
+                            esthéticienne vous appliquera une protection solaire et des produits de soin adaptés pour
+                            préparer votre peau.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Bottom -->
+    <section class="py-16 px-6 bg-gold-600 text-black text-center">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl luxury-font mb-6">Prête à révéler votre éclat naturel ?</h2>
+            <p class="text-xl mb-8">Nos expertes en soins de la peau vous attendent pour une consultation personnalisée.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.bg-white.p-6.rounded-lg.shadow-sm button').forEach(button => {
+            button.addEventListener('click', function () {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('i');
+
+                content.classList.toggle('hidden');
+                icon.classList.toggle('transform');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Animation pour les cartes de soins
+        document.addEventListener('DOMContentLoaded', function () {
+            const cards = document.querySelectorAll('.treatment-card');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => {
+                card.style.opacity = 0;
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+
+</html>
