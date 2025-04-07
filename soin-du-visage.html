@@ -121,24 +121,26 @@
 
 <body class="bg-luxury">
     <header class="sticky-nav py-4">
-        <div class="container mx-auto px-4">
-            <!-- On gère l'espacement via space-x-6 -->
-            <nav class="flex justify-center items-center overflow-visible space-x-6">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Logo / Titre -->
+            <div class="text-xl font-bold">
+                <a href="index.html">
+                    <img src="images/Gardenia-Top-Beaute-logoMarron.png" alt="Gardenia Top Beauté Logo" class="h-10">
+                </a>
+            </div>
 
-                <!-- Soins du visage (avec dropdown) -->
+            <!-- Navigation Desktop (cachée sur mobile) -->
+            <nav class="hidden md:flex justify-center items-center space-x-6">
+                <!-- Accueil -->
                 <div class="relative group">
-                    <!-- Lien principal -->
-                    <a href="main2.html" class="category-item inline-flex items-center">
+                    <a href="index.html" class="category-item inline-flex items-center">
                         Accueil
-                        <i class="fas fa-chevron-down text-xs ml-1"></i>
+                        <!-- <i class="fas fa-chevron-down text-xs ml-1"></i> -->
                     </a>
-                    
                 </div>
-
-                <!-- Soins du visage (avec dropdown) -->
+                <!-- Soins du visage -->
                 <div class="relative group">
-                    <!-- Lien principal -->
-                    <a href="soin-du-visage.html" class="category-item inline-flex items-center">
+                    <a href="#" class="category-item inline-flex items-center">
                         Soins du visage
                         <i class="fas fa-chevron-down text-xs ml-1"></i>
                     </a>
@@ -152,12 +154,15 @@
                         <a href="soin-corrections.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50">
                             Dermo-esthétique
                         </a>
+                        <a href="traitement-casmara.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50">
+                            Traitements Casmara
+                        </a>
+
                     </div>
                 </div>
-
-                <!-- Soins du corps (avec dropdown) -->
+                <!-- Soins du corps -->
                 <div class="relative group">
-                    <a href="soin-du-corps.html" class="category-item inline-flex items-center">
+                    <a href="#" class="category-item inline-flex items-center">
                         Soins du corps
                         <i class="fas fa-chevron-down text-xs ml-1"></i>
                     </a>
@@ -172,8 +177,7 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Épilations (avec dropdown) -->
+                <!-- Épilations -->
                 <div class="relative group">
                     <a href="#" class="category-item inline-flex items-center">
                         Épilations
@@ -190,8 +194,7 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Idée Cadeaux (avec dropdown) -->
+                <!-- Idée Cadeaux -->
                 <div class="relative group">
                     <a href="#" class="category-item inline-flex items-center">
                         Idée Cadeaux
@@ -208,7 +211,6 @@
                         </a>
                     </div>
                 </div>
-
                 <!-- Liens directs (sans dropdown) -->
                 <a href="spa.html" class="category-item">
                     Espace Spa
@@ -219,8 +221,12 @@
                 <a href="manicure-pedicure.html" class="category-item">
                     Manucures & Pédicures
                 </a>
-
             </nav>
+
+            <!-- Bouton Menu Mobile (visible uniquement sur mobile) -->
+            <button id="mobile-menu-button" class="block md:hidden focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
         </div>
     </header>
 
