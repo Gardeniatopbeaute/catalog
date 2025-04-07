@@ -3,10 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- Assure le responsive sur mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serenity Spa | Prestations de Luxe</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -333,25 +338,28 @@
 </head>
 
 <body class="bg-white">
+
     <!-- Header -->
     <header class="sticky-nav py-4">
-        <div class="container mx-auto px-4">
-            <!-- On gère l'espacement via space-x-6 -->
-            <nav class="flex justify-center items-center overflow-visible space-x-6">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Logo / Titre -->
+            <div class="text-xl font-bold">
+                <a href="main2.html">
+                    <img src="images/Gardenia-Top-Beaute-logoMarron.png" alt="Gardenia Top Beauté Logo" class="h-10">
+                </a>
+            </div>
 
-                <!-- Soins du visage (avec dropdown) -->
+            <!-- Navigation Desktop (cachée sur mobile) -->
+            <nav class="hidden md:flex justify-center items-center space-x-6">
+                <!-- Accueil -->
                 <div class="relative group">
-                    <!-- Lien principal -->
                     <a href="main2.html" class="category-item inline-flex items-center">
                         Accueil
                         <i class="fas fa-chevron-down text-xs ml-1"></i>
                     </a>
-                    
                 </div>
-
-                <!-- Soins du visage (avec dropdown) -->
+                <!-- Soins du visage -->
                 <div class="relative group">
-                    <!-- Lien principal -->
                     <a href="soin-du-visage.html" class="category-item inline-flex items-center">
                         Soins du visage
                         <i class="fas fa-chevron-down text-xs ml-1"></i>
@@ -368,8 +376,7 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Soins du corps (avec dropdown) -->
+                <!-- Soins du corps -->
                 <div class="relative group">
                     <a href="soin-du-corps.html" class="category-item inline-flex items-center">
                         Soins du corps
@@ -386,8 +393,7 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Épilations (avec dropdown) -->
+                <!-- Épilations -->
                 <div class="relative group">
                     <a href="#" class="category-item inline-flex items-center">
                         Épilations
@@ -404,8 +410,7 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Idée Cadeaux (avec dropdown) -->
+                <!-- Idée Cadeaux -->
                 <div class="relative group">
                     <a href="#" class="category-item inline-flex items-center">
                         Idée Cadeaux
@@ -422,7 +427,6 @@
                         </a>
                     </div>
                 </div>
-
                 <!-- Liens directs (sans dropdown) -->
                 <a href="spa.html" class="category-item">
                     Espace Spa
@@ -433,32 +437,33 @@
                 <a href="manicure-pedicure.html" class="category-item">
                     Manucures & Pédicures
                 </a>
-
             </nav>
+
+            <!-- Bouton Menu Mobile (visible uniquement sur mobile) -->
+            <button id="mobile-menu-button" class="block md:hidden focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
         </div>
     </header>
 
-
-
-
-    <!-- Mobile Menu -->
+    <!-- Menu Mobile -->
     <div class="mobile-menu fixed inset-0 bg-white z-40 pt-20 px-6 overflow-y-auto" id="mobile-menu">
         <div class="flex flex-col space-y-6 py-8">
-            <a href="#" class="text-xl py-2 border-b border-gray-100">Accueil</a>
+            <a href="main2.html" class="text-xl py-2 border-b border-gray-100">Accueil</a>
             <div>
                 <div class="text-xl py-2 border-b border-gray-100 flex justify-between items-center">
                     <span>Prestations</span>
                     <i class="fas fa-chevron-down text-sm ml-2" id="services-toggle"></i>
                 </div>
                 <div class="pl-4 mt-2 hidden" id="services-menu">
-                    <a href="#visage" class="block py-2 text-gray-600">Soins du visage</a>
-                    <a href="#corps" class="block py-2 text-gray-600">Soins du corps</a>
-                    <a href="#dermopigmentation" class="block py-2 text-gray-600">Dermopigmentation</a>
-                    <a href="#epilation" class="block py-2 text-gray-600">Épilations</a>
-                    <a href="#minceur" class="block py-2 text-gray-600">Cures minceur</a>
-                    <a href="#manucure" class="block py-2 text-gray-600">Manucures & Pédicures</a>
-                    <a href="#spa" class="block py-2 text-gray-600">Espace Spa</a>
-                    <a href="#cadeaux" class="block py-2 text-gray-600">Cadeaux</a>
+                    <a href="soin-du-visage.html" class="block py-2 text-gray-600">Soins du visage</a>
+                    <a href="soin-du-corps.html" class="block py-2 text-gray-600">Soins du corps</a>
+                    <a href="dermo.html" class="block py-2 text-gray-600">Dermopigmentation</a>
+                    <a href="epilation.html" class="block py-2 text-gray-600">Épilations</a>
+                    <a href="soin-crops-minceur.html" class="block py-2 text-gray-600">Cures minceur</a>
+                    <a href="manicure-pedicure.html" class="block py-2 text-gray-600">Manucures & Pédicures</a>
+                    <a href="spa.html" class="block py-2 text-gray-600">Espace Spa</a>
+                    <a href="idee-cadeau.html" class="block py-2 text-gray-600">Cadeaux</a>
                 </div>
             </div>
         </div>
@@ -472,11 +477,8 @@
             <p class="text-gray-600 max-w-2xl mx-auto font-light text-lg leading-relaxed">
                 Découvrez notre univers sensoriel dédié à votre bien-être, où chaque soin est une expérience unique
             </p>
-
         </div>
     </section>
-
-
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-12 max-w-6xl">
@@ -490,8 +492,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Carte 1 -->
                 <div class="service-card group">
-                    <div class="service-image"
-                        style="background-image: url('images/soin-visage-femme-savoie.jpg');">
+                    <div class="service-image" style="background-image: url('images/soin-visage-femme-savoie.jpg');">
                     </div>
                     <div class="card-actions">
                         <button class="quick-view-btn" onclick="openModal('modal1')">
@@ -504,11 +505,10 @@
                             Soin visage classique
                         </h3>
                         <p class="text-gray-600 mb-6 font-light leading-relaxed">
-                            Un soin complet pour nourrir, hydrater et revitaliser votre peau. Inclut nettoyage,
-                            exfoliation, masque et massage facial.
+                            Un soin complet pour nourrir, hydrater et revitaliser votre peau.
                         </p>
                         <div class="flex justify-between items-center">
-                            <span class="text-gold font-medium text-lg">À partir de 75€</span>
+                            <span class="text-gold font-medium text-lg"></span>
                             <a href="soin-du-visage.html" class="btn-secondary inline-flex items-center">
                                 Voir nos prestations
                                 <i class="fas fa-arrow-right ml-2 text-sm"></i>
@@ -519,8 +519,7 @@
 
                 <!-- Carte 2 -->
                 <div class="service-card group">
-                    <div class="service-image"
-                        style="background-image: url('images/soin-catiovital-jeunesse.jpg');">
+                    <div class="service-image" style="background-image: url('images/soin-catiovital-jeunesse.jpg');">
                     </div>
                     <div class="card-actions">
                         <button class="quick-view-btn" onclick="openModal('modal2')">
@@ -537,7 +536,7 @@
                             gamme et des techniques avancées.
                         </p>
                         <div class="flex justify-between items-center">
-                            <span class="text-gold font-medium text-lg">À partir de 150€</span>
+                            <span class="text-gold font-medium text-lg"></span>
                             <a href="soin-corrections.html" class="btn-secondary inline-flex items-center">
                                 Voir nos prestations
                                 <i class="fas fa-arrow-right ml-2 text-sm"></i>
@@ -572,11 +571,10 @@
                             Soin Relaxant
                         </h3>
                         <p class="text-gray-600 mb-6 font-light leading-relaxed">
-                            Un massage complet du corps pour relâcher les tensions, améliorer la circulation et procurer
-                            une profonde relaxation.
+                            Nos soins relaxants sont conçus pour apaiser votre corps et votre esprit...
                         </p>
                         <div class="flex justify-between items-center">
-                            <span class="text-gold font-medium text-lg">À partir de 110€</span>
+                            <span class="text-gold font-medium text-lg"></span>
                             <a href="soin-corps-relaxants.html" class="btn-secondary inline-flex items-center">
                                 Voir nos prestations
                                 <i class="fas fa-arrow-right ml-2 text-sm"></i>
@@ -587,8 +585,7 @@
 
                 <!-- Carte 2 -->
                 <div class="service-card group">
-                    <div class="service-image"
-                        style="background-image: url('images/shutterstock_1647804118.jpg');">
+                    <div class="service-image" style="background-image: url('images/shutterstock_1647804118.jpg');">
                     </div>
                     <div class="card-actions">
                         <button class="quick-view-btn" onclick="openModal('modal4')">
@@ -601,11 +598,11 @@
                             Soin Minceur
                         </h3>
                         <p class="text-gray-600 mb-6 font-light leading-relaxed">
-                            Programme complet combinant massage, enveloppements et technologies pour tonifier, drainer
-                            et remodeler la silhouette.
+                            Nos soins minceur utilisent des technologies avancées pour sculpter et tonifier votre
+                            corps...
                         </p>
                         <div class="flex justify-between items-center">
-                            <span class="text-gold font-medium text-lg">À partir de 130€</span>
+                            <span class="text-gold font-medium text-lg"></span>
                             <a href="soin-crops-minceur.html" class="btn-secondary inline-flex items-center">
                                 Voir nos prestations
                                 <i class="fas fa-arrow-right ml-2 text-sm"></i>
@@ -626,8 +623,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Carte 1 -->
                 <div class="service-card group">
-                    <div class="service-image"
-                        style="background-image: url('images/formulekdo.png');">
+                    <div class="service-image" style="background-image: url('images/formulekdo.png');">
                     </div>
                     <div class="card-actions">
                         <button class="quick-view-btn" onclick="openModal('modal5')">
@@ -640,11 +636,10 @@
                             Nos formules cadeaux
                         </h3>
                         <p class="text-gray-600 mb-6 font-light leading-relaxed">
-                            Des combinaisons de soins spécialement conçues pour offrir une expérience spa complète.
-                            Parfait pour les occasions spéciales.
+                            Des combinaisons de soins spécialement conçues pour offrir une expérience spa complète...
                         </p>
                         <div class="flex justify-between items-center">
-                            <span class="text-gold font-medium text-lg">À partir de 150€</span>
+                            <span class="text-gold font-medium text-lg"></span>
                             <a href="idee-cadeau.html" class="btn-secondary inline-flex items-center">
                                 Voir nos prestations
                                 <i class="fas fa-arrow-right ml-2 text-sm"></i>
@@ -655,8 +650,7 @@
 
                 <!-- Carte 2 -->
                 <div class="service-card group">
-                    <div class="service-image"
-                        style="background-image: url('images/ChatGPT\ Image\ Apr\ 7\,\ 2025\,\ 03_36_23\ PM.png');">
+                    <div class="service-image" style="background-image: url('images/chequekdo.png');">
                     </div>
                     <div class="card-actions">
                         <button class="quick-view-btn" onclick="openModal('modal6')">
@@ -669,11 +663,10 @@
                             Nos chèques cadeaux
                         </h3>
                         <p class="text-gray-600 mb-6 font-light leading-relaxed">
-                            Offrez le choix avec nos chèques cadeaux personnalisables, valables pour tous nos soins et
-                            prestations.
+                            Offrez le choix avec nos chèques cadeaux personnalisables, valables pour tous nos soins...
                         </p>
                         <div class="flex justify-between items-center">
-                            <span class="text-gold font-medium text-lg">Montant au choix</span>
+                            <span class="text-gold font-medium text-lg"></span>
                             <a href="cheque-cadeau.html" class="btn-secondary inline-flex items-center">
                                 Voir nos prestations
                                 <i class="fas fa-arrow-right ml-2 text-sm"></i>
@@ -708,11 +701,10 @@
                             Epilation à la cire
                         </h3>
                         <p class="text-gray-600 mb-6 font-light leading-relaxed">
-                            Epilation douce et efficace avec des cires haut de gamme pour un résultat longue durée et
-                            une peau soyeuse.
+                            Epilation douce et efficace avec des cires haut de gamme pour un résultat longue durée...
                         </p>
                         <div class="flex justify-between items-center">
-                            <span class="text-gold font-medium text-lg">À partir de 25€</span>
+                            <span class="text-gold font-medium text-lg"></span>
                             <a href="epilation.html" class="btn-secondary inline-flex items-center">
                                 Voir nos prestations
                                 <i class="fas fa-arrow-right ml-2 text-sm"></i>
@@ -741,7 +733,7 @@
                             les types de peau.
                         </p>
                         <div class="flex justify-between items-center">
-                            <span class="text-gold font-medium text-lg">À partir de 50€</span>
+                            <span class="text-gold font-medium text-lg"></span>
                             <a href="epilation-laser.html" class="btn-secondary inline-flex items-center">
                                 Voir nos prestations
                                 <i class="fas fa-arrow-right ml-2 text-sm"></i>
@@ -776,11 +768,11 @@
                             Dermopigmentation
                         </h3>
                         <p class="text-gray-600 mb-6 font-light leading-relaxed">
-                            Technique de maquillage semi-permanent pour sourcils, lèvres et yeux. Un résultat naturel et
-                            esthétique qui dure.
+                            Le maquillage permanent est une technique qui permet de pigmenter la peau en surface du
+                            derme.
                         </p>
                         <div class="flex justify-between items-center">
-                            <span class="text-gold font-medium text-lg">À partir de 200€</span>
+                            <span class="text-gold font-medium text-lg"></span>
                             <a href="dermo.html" class="btn-secondary inline-flex items-center">
                                 Voir nos prestations
                                 <i class="fas fa-arrow-right ml-2 text-sm"></i>
@@ -791,8 +783,7 @@
 
                 <!-- Carte 2 -->
                 <div class="service-card group">
-                    <div class="service-image"
-                        style="background-image: url('images/manucure-pedicure.jpg');">
+                    <div class="service-image" style="background-image: url('images/manucure-pedicure.jpg');">
                     </div>
                     <div class="card-actions">
                         <button class="quick-view-btn" onclick="openModal('modal10')">
@@ -809,7 +800,7 @@
                             massage et vernis.
                         </p>
                         <div class="flex justify-between items-center">
-                            <span class="text-gold font-medium text-lg">À partir de 45€</span>
+                            <span class="text-gold font-medium text-lg"></span>
                             <a href="manicure-pedicure.html" class="btn-secondary inline-flex items-center">
                                 Voir nos prestations
                                 <i class="fas fa-arrow-right ml-2 text-sm"></i>
@@ -832,8 +823,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="service-card group">
-                    <div class="service-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+                    <div class="service-image" style="background-image: url('');">
                     </div>
                     <div class="card-actions">
                         <button class="quick-view-btn" onclick="openModal('modal11')">
@@ -841,8 +831,9 @@
                         </button>
                     </div>
                     <div class="p-8">
-                        <div class="bg-gold-light text-gold-dark px-3 py-1 text-xs font-medium inline-block mb-4">OFFRE
-                            LIMITÉE</div>
+                        <div class="bg-gold-light text-gold-dark px-3 py-1 text-xs font-medium inline-block mb-4">
+                            OFFRE LIMITÉE
+                        </div>
                         <h3
                             class="text-2xl luxury-font leading-tight mb-4 text-gray-800 group-hover:text-gold transition-colors duration-300">
                             Soin Visage + Massage
@@ -856,17 +847,12 @@
                                 <span class="text-gold font-medium text-lg">150€</span>
                                 <span class="text-gray-400 line-through ml-2 text-sm">180€</span>
                             </div>
-                            <a href="#" class="btn-secondary inline-flex items-center">
-                                Voir détails
-                                <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="service-card group">
-                    <div class="service-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+                    <div class="service-image" style="background-image: url('');">
                     </div>
                     <div class="card-actions">
                         <button class="quick-view-btn" onclick="openModal('modal12')">
@@ -875,7 +861,8 @@
                     </div>
                     <div class="p-8">
                         <div class="bg-gold-light text-gold-dark px-3 py-1 text-xs font-medium inline-block mb-4">
-                            NOUVEAUTÉ</div>
+                            NOUVEAUTÉ
+                        </div>
                         <h3
                             class="text-2xl luxury-font leading-tight mb-4 text-gray-800 group-hover:text-gold transition-colors duration-300">
                             Journée Spa
@@ -889,17 +876,12 @@
                                 <span class="text-gold font-medium text-lg">250€</span>
                                 <span class="text-gray-400 line-through ml-2 text-sm">300€</span>
                             </div>
-                            <a href="#" class="btn-secondary inline-flex items-center">
-                                Voir détails
-                                <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="service-card group">
-                    <div class="service-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+                    <div class="service-image" style="background-image: url('');">
                     </div>
                     <div class="card-actions">
                         <button class="quick-view-btn" onclick="openModal('modal13')">
@@ -907,8 +889,9 @@
                         </button>
                     </div>
                     <div class="p-8">
-                        <div class="bg-gold-light text-gold-dark px-3 py-1 text-xs font-medium inline-block mb-4">IDÉE
-                            CADEAU</div>
+                        <div class="bg-gold-light text-gold-dark px-3 py-1 text-xs font-medium inline-block mb-4">
+                            IDÉE CADEAU
+                        </div>
                         <h3
                             class="text-2xl luxury-font leading-tight mb-4 text-gray-800 group-hover:text-gold transition-colors duration-300">
                             Cadeau Découverte
@@ -922,10 +905,6 @@
                                 <span class="text-gold font-medium text-lg">200€</span>
                                 <span class="text-gray-400 line-through ml-2 text-sm">240€</span>
                             </div>
-                            <a href="#" class="btn-secondary inline-flex items-center">
-                                Voir détails
-                                <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -933,14 +912,7 @@
         </section>
     </main>
 
-    <!-- Floating Action Button -->
-    <a href="#contact" class="fab">
-        <i class="fas fa-calendar-alt text-xl"></i>
-    </a>
-
-    
-
-    <!-- Modal -->
+    <!-- Exemple de Modal (vous pouvez dupliquer pour les autres) -->
     <div class="modal" id="modal1">
         <div class="modal-content">
             <div class="relative">
@@ -949,7 +921,7 @@
                 </button>
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="h-64 md:h-full bg-cover bg-center"
-                        style="background-image: url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+                        style="background-image: url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl luxury-font text-gray-800 mb-4">Soin visage classique</h3>
@@ -1002,7 +974,7 @@
 
     <!-- Scripts -->
     <script>
-        // Mobile menu toggle
+        // Toggle du menu mobile
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const servicesToggle = document.getElementById('services-toggle');
@@ -1018,22 +990,29 @@
             servicesToggle.classList.toggle('fa-chevron-up');
         });
 
-        // Category navigation
+        // Category navigation (optionnel si vous utilisez les ancres)
         document.querySelectorAll('.category-item').forEach(item => {
             item.addEventListener('click', function (e) {
+                // Empêche le comportement par défaut
                 e.preventDefault();
+                // Retire la classe active de tous les liens
                 document.querySelectorAll('.category-item').forEach(i => i.classList.remove('active'));
+                // Ajoute la classe active sur le lien cliqué
                 this.classList.add('active');
+
+                // Scrolle vers la section correspondante si l'ID est présent
                 const targetId = this.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
-                window.scrollTo({
-                    top: targetSection.offsetTop - 120,
-                    behavior: 'smooth'
-                });
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 120,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
 
-        // Scroll to reveal animation
+        // Animation au scroll
         const animateElements = document.querySelectorAll('.animate-fade-in');
 
         const observer = new IntersectionObserver((entries) => {
@@ -1052,7 +1031,7 @@
             observer.observe(el);
         });
 
-        // Modal functions
+        // Fonctions des modals
         function openModal(modalId) {
             document.getElementById(modalId).style.display = 'flex';
             document.body.style.overflow = 'hidden';
@@ -1063,14 +1042,15 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Close modal when clicking outside
+        // Fermer la modal en cliquant à l'extérieur
         window.onclick = function (event) {
-            if (event.target.className === 'modal') {
+            if (event.target.classList.contains('modal')) {
                 event.target.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
         }
     </script>
+
 </body>
 
 </html>

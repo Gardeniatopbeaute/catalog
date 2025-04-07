@@ -15,9 +15,9 @@
             --background: #ffffff;
             --text-color: #333333;
             --heading-color: #222222;
-            --button-bg: #e07a5f;
+            --button-bg: #1d4856;
             --button-hover: #d1664b;
-            --pink-bg: #f5cac3;
+            --pink-bg: #1d4856;
             --green-border: #3ca564;
         }
 
@@ -57,12 +57,7 @@
         }
 
         /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('https://images.unsplash.com/photo-1599058917210-1d4a9d81a517?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
-        }
+        
 
         /* Onglets */
         .tab-btn {
@@ -219,14 +214,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero py-20 text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl luxury-font mb-6">Tarifs par Zone - Épilations</h1>
-            <p class="text-xl max-w-2xl mx-auto mb-8">Des prix clairs pour chaque zone d'épilation, adaptés à vos
-                besoins.</p>
-        </div>
-    </section>
+    
 
     
 
@@ -275,20 +263,40 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Sourcils Entretien</td>
-                            <td>10€</td>
-                        </tr>
-                        <tr>
-                            <td>Sourcils Création</td>
-                            <td>15€</td>
-                        </tr>
-                        <tr>
                             <td>Joues</td>
-                            <td>10€</td>
+                            <td>90€</td>
                         </tr>
                         <tr>
-                            <td>Lèvres</td>
-                            <td>10€</td>
+                            <td>Levres</td>
+                            <td>60€</td>
+                        </tr>
+                        <tr>
+                            <td>Levres + menton</td>
+                            <td>90€</td>
+                        </tr>
+                        <tr>
+                            <td>Cou</td>
+                            <td>60€</td>
+                        </tr>
+                        <tr>
+                            <td>Nez</td>
+                            <td>60€</td>
+                        </tr>
+                        <tr>
+                            <td>Nuque</td>
+                            <td>60€</td>
+                        </tr>
+                        <tr>
+                            <td>Oreilles</td>
+                            <td>60€</td>
+                        </tr>
+                        <tr>
+                            <td>Menton</td>
+                            <td>60€</td>
+                        </tr>
+                        <tr>
+                            <td>Favoris</td>
+                            <td>60€</td>
                         </tr>
                         <!-- Ajoutez d'autres lignes si nécessaire -->
                     </tbody>
@@ -305,16 +313,52 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Épaules</td>
-                            <td>15€</td>
+                            <td>Aisselles</td>
+                            <td>60€</td>
                         </tr>
                         <tr>
-                            <td>Dos</td>
-                            <td>20€</td>
+                            <td>Bras entier</td>
+                            <td>140€</td>
                         </tr>
                         <tr>
-                            <td>Abdomen</td>
-                            <td>25€</td>
+                            <td>Avant bras</td>
+                            <td>110€</td>
+                        </tr>
+                        <tr>
+                            <td>Epaules</td>
+                            <td>80€</td>
+                        </tr>
+                        <tr>
+                            <td>Ligne ventre</td>
+                            <td>40€</td>
+                        </tr>
+                        <tr>
+                            <td>Torse</td>
+                            <td>90€</td>
+                        </tr>
+                        <tr>
+                            <td>Dos complet</td>
+                            <td>155€</td>
+                        </tr>
+                        <tr>
+                            <td>Lombaires</td>
+                            <td>90€</td>
+                        </tr>
+                        <tr>
+                            <td>Demi jambes</td>
+                            <td>155€</td>
+                        </tr>
+                        <tr>
+                            <td>Cuisses</td>
+                            <td>170€</td>
+                        </tr>
+                        <tr>
+                            <td>Jambes entieres</td>
+                            <td>250€</td>
+                        </tr>
+                        <tr>
+                            <td>Fesses</td>
+                            <td>135€</td>
                         </tr>
                         <!-- Ajoutez d'autres lignes si nécessaire -->
                     </tbody>
@@ -331,12 +375,20 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Zone Intime A</td>
-                            <td>20€</td>
+                            <td>Maillot simple</td>
+                            <td>85€</td>
                         </tr>
                         <tr>
-                            <td>Zone Intime B</td>
-                            <td>25€</td>
+                            <td>Maillot echancre</td>
+                            <td>105€</td>
+                        </tr>
+                        <tr>
+                            <td>Maillot integral</td>
+                            <td>130€</td>
+                        </tr>
+                        <tr>
+                            <td>Sillon inter fesses</td>
+                            <td>65€</td>
                         </tr>
                         <!-- Ajoutez d'autres lignes si nécessaire -->
                     </tbody>
@@ -347,110 +399,9 @@
 
     
 
-    <!-- FAQ Section -->
-    <section class="py-12 px-6 bg-gray-50">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl luxury-font text-center mb-12">Questions Fréquentes</h2>
-            <div class="space-y-4">
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <button class="flex justify-between items-center w-full text-left">
-                        <h3 class="text-lg font-medium">Combien de temps durent les résultats des épilations ?</h3>
-                        <i class="fas fa-chevron-down text-gold-600 ml-4 transition-transform duration-300"></i>
-                    </button>
-                    <div class="mt-3 text-gray-600 hidden">
-                        <p>Les résultats varient selon la technique utilisée et le type de peau. Généralement, ils
-                            durent de 3 à 6 semaines.</p>
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <button class="flex justify-between items-center w-full text-left">
-                        <h3 class="text-lg font-medium">La douleur est-elle importante lors d'une épilation ?</h3>
-                        <i class="fas fa-chevron-down text-gold-600 ml-4 transition-transform duration-300"></i>
-                    </button>
-                    <div class="mt-3 text-gray-600 hidden">
-                        <p>Les techniques modernes minimisent la douleur. Une légère gêne peut être ressentie, notamment
-                            avec la cire chaude.</p>
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <button class="flex justify-between items-center w-full text-left">
-                        <h3 class="text-lg font-medium">Quels sont les risques d'une épilation au laser ?</h3>
-                        <i class="fas fa-chevron-down text-gold-600 ml-4 transition-transform duration-300"></i>
-                    </button>
-                    <div class="mt-3 text-gray-600 hidden">
-                        <p>Lorsqu'elle est effectuée par un professionnel, l'épilation au laser est sûre. Suivez bien
-                            les consignes pré et post-traitement.</p>
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <button class="flex justify-between items-center w-full text-left">
-                        <h3 class="text-lg font-medium">Combien de séances sont nécessaires pour une épilation
-                            définitive ?</h3>
-                        <i class="fas fa-chevron-down text-gold-600 ml-4 transition-transform duration-300"></i>
-                    </button>
-                    <div class="mt-3 text-gray-600 hidden">
-                        <p>Pour l'épilation au laser, une série de 6 à 8 séances est généralement recommandée pour
-                            obtenir des résultats optimaux.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   
 
-    <!-- CTA Bottom -->
-    <section class="py-16 px-6 bg-gold-600 text-black text-center">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl luxury-font mb-6">Prête à révéler votre éclat naturel ?</h2>
-            <p class="text-xl mb-8">Contactez-nous pour une consultation personnalisée et découvrez la solution qui
-                vous convient.</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 px-6">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl luxury-font mb-4">Gardenia Top Beauté</h3>
-                    <p class="text-gray-400">Votre espace de beauté et de bien-être.</p>
-                    <div class="flex space-x-4 mt-4">
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="text-lg luxury-font mb-4">Nos Prestations</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Soins du Visage</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Soins du Corps</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Épilations</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Massages</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg luxury-font mb-4">Informations</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">À propos</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Équipe</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Carrières</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg luxury-font mb-4">Contact</h4>
-                    <address class="text-gray-400 not-italic">
-                        <p><i class="fas fa-map-marker-alt mr-2"></i> 123 Avenue du Luxe, Paris</p>
-                        <p class="my-2"><i class="fas fa-phone mr-2"></i> +33 1 23 45 67 89</p>
-                        <p><i class="fas fa-envelope mr-2"></i> contact@gardeniatopbeaute.fr</p>
-                    </address>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
-                <p>&copy; 2023 Gardenia Top Beauté. Tous droits réservés.</p>
-            </div>
-        </div>
-    </footer>
+    
 
     <script>
         // Gestion des onglets
