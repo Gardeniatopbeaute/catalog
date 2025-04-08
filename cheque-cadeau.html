@@ -8,89 +8,196 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap');
+    /* Définir les variables globales */
+    :root {
+        --background: #f9f7f4;
+        --text-color: #4a4a4a;
+        --heading-color: #2a2a2a;
+        --gold: #c5a87d;
+        --gold-light: #e8d9b5;
+        --button-bg: #c5a87d;
+        --button-hover: #b4966a;
+        --card-bg: #ffffff;
+        --border-color: #e8e3d9;
+    }
 
+    /* Styles généraux du body */
     body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #f9f7f4;
-      color: #333;
+        font-family: 'Montserrat', sans-serif;
+        background-color: var(--background);
+        color: var(--text-color);
+        overflow-x: hidden;
     }
 
+    /* Police de caractères de luxe */
     .luxury-font {
-      font-family: 'Playfair Display', serif;
+        font-family: 'Playfair Display', serif;
     }
 
+    /* Header */
+    header {
+        background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Navigation */
+    nav a {
+        color: var(--text-color);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    nav a:hover {
+        color: var(--button-bg);
+    }
+
+    nav a:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: -2px;
+        left: 0;
+        background-color: var(--gold);
+        transition: width 0.3s ease;
+    }
+
+    nav a:hover:after {
+        width: 100%;
+    }
+
+    /* Category Navigation */
+    .sticky-nav {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .category-nav {
+        scrollbar-width: none;
+    }
+
+    .category-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .category-item {
+        position: relative;
+        padding: 0.5rem 1rem;
+        margin-right: 0.5rem;
+        color: var(--text-color);
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    .category-item:hover,
+    .category-item.active {
+        color: var(--gold);
+    }
+
+    .category-item.active:after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 1rem;
+        right: 1rem;
+        height: 2px;
+        background-color: var(--gold);
+    }
+
+    /* Traitement des cartes */
     .treatment-card {
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      border-radius: 12px;
-      overflow: hidden;
-      opacity: 0;
-      /* Pour l’animation d’apparition */
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+        overflow: hidden;
     }
 
     .treatment-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
     }
 
+    /* Divider doré */
+    .gold-divider {
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    /* Fond de page de luxe */
     .bg-luxury {
-      background: linear-gradient(135deg, #f9f7f4 0%, #e8e6e1 100%);
+        background: linear-gradient(135deg, var(--background) 0%, #e8e6e1 100%);
     }
 
-    .nav-link {
-      position: relative;
-    }
-
-    .nav-link:after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -2px;
-      left: 0;
-      background-color: #d4af37;
-      transition: width 0.3s ease;
-    }
-
-    .nav-link:hover:after {
-      width: 100%;
-    }
-
-    /* Hero */
-    .treatment-hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url('images/chequekdo.png');
-      background-size: cover;
-      background-position: center;
-    }
-
-    /* Badges & divers */
-    .duration-badge {
-      background-color: rgba(212, 175, 55, 0.2);
-      border: 1px solid #d4af37;
-    }
-
-    .price-tag {
-      background: linear-gradient(135deg, #d4af37 0%, #f1da7a 100%);
-    }
-
+    /* Effet fade-in */
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .animate-fadeIn {
-      animation: fadeIn 0.8s ease forwards;
+        animation: fadeIn 0.8s ease forwards;
     }
-  </style>
+
+    /* Hero image */
+    .treatment-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/chequekdo.png') no-repeat center center;
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* Durée du badge */
+    .duration-badge {
+        background-color: rgba(212, 175, 55, 0.2);
+        border: 1px solid var(--gold);
+    }
+
+    /* Etiquette de prix */
+    .price-tag {
+        background: linear-gradient(135deg, var(--gold) 0%, #f1da7a 100%);
+    }
+
+    /* Éléments de bien-être */
+    .benefit-item {
+        position: relative;
+        padding-left: 28px;
+    }
+
+    .benefit-item:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 6px;
+        width: 18px;
+        height: 18px;
+        background-color: var(--gold);
+        border-radius: 50%;
+        opacity: 0.3;
+    }
+
+    .benefit-item:after {
+        content: '✓';
+        position: absolute;
+        left: 4px;
+        top: 3px;
+        color: var(--gold);
+        font-weight: bold;
+    }
+</style>
+
 </head>
 
 <body class="bg-luxury">
@@ -186,21 +293,20 @@
                 </div>
             </div>
             <!-- Liens directs (sans dropdown) -->
-            <a href="spa.html" class="category-item">
-                Espace Spa
-            </a>
+            
             <a href="dermo.html" class="category-item">
                 Dermopigmentation
             </a>
             <a href="manicure-pedicure.html" class="category-item">
                 Manucures & Pédicures
             </a>
+            <a href="espace-spa.html" class="category-item">
+              Espace spa
+          </a>
+
         </nav>
 
-        <!-- Bouton Menu Mobile (visible uniquement sur mobile) -->
-        <button id="mobile-menu-button" class="block md:hidden focus:outline-none">
-            <i class="fas fa-bars text-xl"></i>
-        </button>
+        
     </div>
 </header>
 

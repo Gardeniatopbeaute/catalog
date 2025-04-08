@@ -1,94 +1,209 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espace Spa Prestige | Institut de Beauté</title>
+    <title>Gardenia Top Beauté | Prestations</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap');
-        
+        /* Définir les variables globales */
+        :root {
+            --background: #f9f7f4;
+            --text-color: #4a4a4a;
+            --heading-color: #2a2a2a;
+            --gold: #c5a87d;
+            --gold-light: #e8d9b5;
+            --button-bg: #c5a87d;
+            --button-hover: #b4966a;
+            --card-bg: #ffffff;
+            --border-color: #e8e3d9;
+        }
+    
+        /* Styles généraux du body */
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #f9f7f5;
-            color: #333;
+            background-color: var(--background);
+            color: var(--text-color);
+            overflow-x: hidden;
         }
-        
-        .title-font {
+    
+        /* Police de caractères de luxe */
+        .luxury-font {
             font-family: 'Playfair Display', serif;
         }
-        
-        .spa-card {
+    
+        /* Header */
+        /* Hero image */
+        .treatment-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/ChatGPT\ Image\ Apr\ 8\,\ 2025\,\ 11_50_09\ AM.png') no-repeat center center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid var(--border-color);
+        }
+    
+        /* Navigation */
+        nav a {
+            color: var(--text-color);
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
-            background: linear-gradient(to bottom, #ffffff 70%, #f8f3ee 100%);
+            position: relative;
+        }
+    
+        nav a:hover {
+            color: var(--button-bg);
+        }
+    
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s ease;
+        }
+    
+        nav a:hover:after {
+            width: 100%;
+        }
+    
+        /* Category Navigation */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+        }
+    
+        .category-nav {
+            scrollbar-width: none;
+        }
+    
+        .category-nav::-webkit-scrollbar {
+            display: none;
+        }
+    
+        .category-item {
+            position: relative;
+            padding: 0.5rem 1rem;
+            margin-right: 0.5rem;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+    
+        .category-item:hover,
+        .category-item.active {
+            color: var(--gold);
+        }
+    
+        .category-item.active:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 1rem;
+            right: 1rem;
+            height: 2px;
+            background-color: var(--gold);
+        }
+    
+        /* Traitement des cartes */
+        .treatment-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             border-radius: 12px;
             overflow: hidden;
         }
-        
-        .spa-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.15);
+    
+        .treatment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
         }
-        
-        .spa-card-image {
-            height: 220px;
-            background-size: cover;
-            background-position: center;
+    
+        /* Divider doré */
+        .gold-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+    
+        /* Fond de page de luxe */
+        .bg-luxury {
+            background: linear-gradient(135deg, var(--background) 0%, #e8e6e1 100%);
+        }
+    
+        /* Effet fade-in */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease forwards;
+        }
+    
+        /* Hero image */
+    
+        /* Durée du badge */
+        .duration-badge {
+            background-color: rgba(212, 175, 55, 0.2);
+            border: 1px solid var(--gold);
+        }
+    
+        /* Etiquette de prix */
+        .price-tag {
+            background: linear-gradient(135deg, var(--gold) 0%, #f1da7a 100%);
+        }
+    
+        /* Éléments de bien-être */
+        .benefit-item {
             position: relative;
+            padding-left: 28px;
         }
-        
-        .spa-card-image::after {
+    
+        .benefit-item:before {
             content: '';
             position: absolute;
-            bottom: 0;
             left: 0;
-            right: 0;
-            height: 60px;
-            background: linear-gradient(to top, rgba(255,255,255,0.8), transparent);
+            top: 6px;
+            width: 18px;
+            height: 18px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            opacity: 0.3;
         }
-        
-        .price-tag {
+    
+        .benefit-item:after {
+            content: '✓';
             position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: rgba(255,255,255,0.9);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: 600;
-            color: #8b6b4a;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        
-        .divider {
-            height: 1px;
-            background: linear-gradient(to right, transparent, #d4c4b0, transparent);
-            margin: 15px 0;
-        }
-        
-        .btn-reserver {
-            background: linear-gradient(to right, #a38b70, #c5b09a);
-            color: white;
-            border: none;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-reserver:hover {
-            background: linear-gradient(to right, #8b6b4a, #a38b70);
-            transform: translateY(-2px);
-        }
-        
-        .header-bg {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
-            min-height: 400px;
+            left: 4px;
+            top: 3px;
+            color: var(--gold);
+            font-weight: bold;
         }
     </style>
+    
 </head>
-<body>
-    <!-- Header avec image de fond -->
+
+<body class="bg-luxury">
+    <!-- Header -->
     <header class="sticky-nav py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <!-- Logo / Titre -->
@@ -181,361 +296,116 @@
                     </div>
                 </div>
                 <!-- Liens directs (sans dropdown) -->
-                <a href="spa.html" class="category-item">
-                    Espace Spa
-                </a>
+                
                 <a href="dermo.html" class="category-item">
                     Dermopigmentation
                 </a>
                 <a href="manicure-pedicure.html" class="category-item">
                     Manucures & Pédicures
                 </a>
+                <a href="espace-spa.html" class="category-item">
+                  Espace spa
+              </a>
+
             </nav>
 
-            <!-- Bouton Menu Mobile (visible uniquement sur mobile) -->
-            <button id="mobile-menu-button" class="block md:hidden focus:outline-none">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
+            
         </div>
     </header>
 
-    <!-- Section Introduction -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="title-font text-3xl md:text-4xl mb-6">Un havre de paix dédié à votre bien-être</h2>
-                <p class="text-lg text-gray-600 mb-8">Notre espace spa vous propose une sélection de soins haut de gamme, alliant techniques expertes et produits d'exception pour une expérience sensorielle unique. Laissez-vous guider vers l'équilibre du corps et de l'esprit.</p>
-                <div class="flex justify-center space-x-4">
-                    <div class="flex items-center">
-                        <i class="fas fa-spa text-2xl text-amber-800 mr-2"></i>
-                        <span>Ambiance zen</span>
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fas fa-leaf text-2xl text-amber-800 mr-2"></i>
-                        <span>Produits naturels</span>
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fas fa-star text-2xl text-amber-800 mr-2"></i>
-                        <span>Expertise</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
-    <!-- Section Prestations -->
-    <section id="prestations" class="py-16 bg-amber-50">
-        <div class="container mx-auto px-6">
-            <h2 class="title-font text-3xl md:text-4xl mb-12 text-center">Nos Prestations Spa</h2>
-            
-            <!-- Soins du visage -->
-            <div class="mb-20">
-                <h3 class="title-font text-2xl mb-8 flex items-center">
-                    <i class="fas fa-spa mr-4 text-amber-700"></i>
-                    Soins du Visage Prestige
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Carte 1 -->
-                    <div class="spa-card">
-                        <div class="spa-card-image" style="background-image: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                            <div class="price-tag">À partir de 90€</div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="title-font text-xl mb-2">Rituel Lumière de Jeunesse</h4>
-                            <p class="text-gray-600 mb-4">Un soin complet anti-âge utilisant des actifs haute concentration pour illuminer et raffermir le visage.</p>
-                            <div class="divider"></div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 60 min</span>
-                                <button class="btn-reserver px-4 py-2 rounded-full text-sm">Réserver</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Carte 2 -->
-                    <div class="spa-card">
-                        <div class="spa-card-image" style="background-image: url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                            <div class="price-tag">À partir de 75€</div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="title-font text-xl mb-2">Soin Hydra-Détox</h4>
-                            <p class="text-gray-600 mb-4">Purifiant et hydratant, ce soin élimine les toxines tout en restaurant l'équilibre hydrique de la peau.</p>
-                            <div class="divider"></div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 45 min</span>
-                                <button class="btn-reserver px-4 py-2 rounded-full text-sm">Réserver</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Carte 3 -->
-                    <div class="spa-card">
-                        <div class="spa-card-image" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                            <div class="price-tag">À partir de 110€</div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="title-font text-xl mb-2">Rituel Or et Caviar</h4>
-                            <p class="text-gray-600 mb-4">Un soin d'exception combinant les bienfaits de l'or 24 carats et des protéines de caviar pour un effet lifting immédiat.</p>
-                            <div class="divider"></div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 80 min</span>
-                                <button class="btn-reserver px-4 py-2 rounded-full text-sm">Réserver</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Massages -->
-            <div class="mb-20">
-                <h3 class="title-font text-2xl mb-8 flex items-center">
-                    <i class="fas fa-hands mr-4 text-amber-700"></i>
-                    Massages Bien-être
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Carte 1 -->
-                    <div class="spa-card">
-                        <div class="spa-card-image" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                            <div class="price-tag">À partir de 95€</div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="title-font text-xl mb-2">Massage Suédois</h4>
-                            <p class="text-gray-600 mb-4">Un classique revitalisant qui combine mouvements fluides et pétrissages profonds pour détendre les muscles.</p>
-                            <div class="divider"></div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 60 min</span>
-                                <button class="btn-reserver px-4 py-2 rounded-full text-sm">Réserver</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Carte 2 -->
-                    <div class="spa-card">
-                        <div class="spa-card-image" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                            <div class="price-tag">À partir de 120€</div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="title-font text-xl mb-2">Massage aux Pierres Chaudes</h4>
-                            <p class="text-gray-600 mb-4">Une expérience unique combinant les bienfaits du massage et de la chaleur des pierres volcaniques.</p>
-                            <div class="divider"></div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 75 min</span>
-                                <button class="btn-reserver px-4 py-2 rounded-full text-sm">Réserver</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Carte 3 -->
-                    <div class="spa-card">
-                        <div class="spa-card-image" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                            <div class="price-tag">À partir de 150€</div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="title-font text-xl mb-2">Rituel Balinais</h4>
-                            <p class="text-gray-600 mb-4">Un voyage sensoriel inspiré des traditions balinaises, associant massage, enveloppement et soin du visage.</p>
-                            <div class="divider"></div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 90 min</span>
-                                <button class="btn-reserver px-4 py-2 rounded-full text-sm">Réserver</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Enveloppements -->
-            <div class="mb-20">
-                <h3 class="title-font text-2xl mb-8 flex items-center">
-                    <i class="fas fa-leaf mr-4 text-amber-700"></i>
-                    Enveloppements Corps
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Carte 1 -->
-                    <div class="spa-card">
-                        <div class="spa-card-image" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                            <div class="price-tag">À partir de 85€</div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="title-font text-xl mb-2">Enveloppement Algues Marines</h4>
-                            <p class="text-gray-600 mb-4">Riche en oligo-éléments, cet enveloppement draine, reminéralise et tonifie l'ensemble du corps.</p>
-                            <div class="divider"></div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 50 min</span>
-                                <button class="btn-reserver px-4 py-2 rounded-full text-sm">Réserver</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Carte 2 -->
-                    <div class="spa-card">
-                        <div class="spa-card-image" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                            <div class="price-tag">À partir de 95€</div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="title-font text-xl mb-2">Enveloppement Chocolat</h4>
-                            <p class="text-gray-600 mb-4">Un moment gourmand aux propriétés anti-oxydantes et nourrissantes pour une peau veloutée.</p>
-                            <div class="divider"></div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 60 min</span>
-                                <button class="btn-reserver px-4 py-2 rounded-full text-sm">Réserver</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Carte 3 -->
-                    <div class="spa-card">
-                        <div class="spa-card-image" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                            <div class="price-tag">À partir de 110€</div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="title-font text-xl mb-2">Rituel Détoxifiante au Bambou</h4>
-                            <p class="text-gray-600 mb-4">Un enveloppement innovant combinant les vertus du bambou et des huiles essentielles pour purifier l'organisme.</p>
-                            <div class="divider"></div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 70 min</span>
-                                <button class="btn-reserver px-4 py-2 rounded-full text-sm">Réserver</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Forfaits -->
-            <div>
-                <h3 class="title-font text-2xl mb-8 flex items-center">
-                    <i class="fas fa-gem mr-4 text-amber-700"></i>
-                    Forfaits Prestige
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Carte 1 -->
-                    <div class="spa-card">
-                        <div class="spa-card-image" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                            <div class="price-tag">À partir de 180€</div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="title-font text-xl mb-2">Évasion Spa</h4>
-                            <p class="text-gray-600 mb-4">Soin du visage + Massage du dos + Accès hammam. Le combo parfait pour une pause bien-être.</p>
-                            <div class="divider"></div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 120 min</span>
-                                <button class="btn-reserver px-4 py-2 rounded-full text-sm">Réserver</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Carte 2 -->
-                    <div class="spa-card">
-                        <div class="spa-card-image" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                            <div class="price-tag">À partir de 250€</div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="title-font text-xl mb-2">Journée Spa</h4>
-                            <p class="text-gray-600 mb-4">Accès illimité aux installations + Massage complet + Soin du visage + Déjeuner healthy.</p>
-                            <div class="divider"></div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 5 heures</span>
-                                <button class="btn-reserver px-4 py-2 rounded-full text-sm">Réserver</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Carte 3 -->
-                    <div class="spa-card">
-                        <div class="spa-card-image" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                            <div class="price-tag">À partir de 350€</div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="title-font text-xl mb-2">Rituel Impérial</h4>
-                            <p class="text-gray-600 mb-4">Notre expérience la plus exclusive : soin du visage or, massage balinais, enveloppement et soin des mains et pieds.</p>
-                            <div class="divider"></div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 180 min</span>
-                                <button class="btn-reserver px-4 py-2 rounded-full text-sm">Réserver</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section CTA -->
-    <section class="py-20 bg-amber-800 text-white">
+    <!-- Category Hero -->
+    <section class="treatment-hero py-20 text-white">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="title-font text-3xl md:text-4xl mb-6">Prêt à vivre l'expérience ?</h2>
-            <p class="text-xl max-w-2xl mx-auto mb-10">Nos conseillers sont à votre disposition pour personnaliser votre parcours bien-être.</p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <a href="tel:+33123456789" class="bg-white text-amber-800 px-8 py-3 rounded-full font-medium text-lg inline-block hover:bg-gray-100 transition">
-                    <i class="fas fa-phone mr-2"></i>01 23 45 67 89
-                </a>
-                <a href="#prestations" class="border-2 border-white px-8 py-3 rounded-full font-medium text-lg inline-block hover:bg-white hover:text-amber-800 transition">
-                    <i class="far fa-calendar-alt mr-2"></i>Réserver en ligne
-                </a>
+            <h1 class="text-4xl md:text-6xl luxury-font mb-6 animate-fadeIn">Forfaits hammam & sauna</h1>
+            <!-- <p class="text-xl max-w-2xl mx-auto mb-8">Rajeunir et embellir la peau sans chirurgie !</p> -->
+            <div class="flex justify-center space-x-4">
+                <!-- <span class="duration-badge px-4 py-2 rounded-full text-sm">Durée: 60-90 min</span>
+                <span class="price-tag px-4 py-2 rounded-full text-sm font-medium">À partir de 88€</span> -->
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h4 class="title-font text-xl mb-4">Institut de Beauté Prestige</h4>
-                    <p class="text-gray-400">12 Avenue des Champs-Élysées<br>75008 Paris, France</p>
-                </div>
-                <div>
-                    <h4 class="title-font text-xl mb-4">Horaires</h4>
-                    <p class="text-gray-400">Lundi - Vendredi : 9h - 20h<br>Samedi : 9h - 18h<br>Dimanche : Fermé</p>
-                </div>
-                <div>
-                    <h4 class="title-font text-xl mb-4">Contact</h4>
-                    <p class="text-gray-400 mb-2">contact@institutprestige.com</p>
-                    <p class="text-gray-400">01 23 45 67 89</p>
-                </div>
-                <div>
-                    <h4 class="title-font text-xl mb-4">Suivez-nous</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-pinterest"></i></a>
+    
+
+    <section class="py-12 px-6">
+        <div class="container mx-auto">
+            <!-- <h2 class="text-3xl luxury-font text-gray-800 mb-8 text-center">Traitements casmara</h2> -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Traitement 1 -->
+                <div class="treatment-card bg-white rounded-lg shadow-md overflow-hidden animate-fadeIn"
+                    style="animation-delay: 0.1s;">
+                    <img src="images/7502af613841-sauna.jpg"
+                        alt="Traitement Purifying" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl luxury-font text-gray-800">4 séances sauna</h3>
+                            <span class="text-[#d4af37] font-medium">120€</span>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed text-base">
+                            Découvrez les bienfaits d’une séance de sauna, idéales pour se détendre. Le sauna, avec sa chaleur sèche, détend les muscles, améliore la circulation sanguine et renforce le système immunitaire.
+Durée : 30min. 
+                        </p>
                     </div>
                 </div>
-            </div>
-            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-400">
-                <p>© 2023 Institut de Beauté Prestige. Tous droits réservés.</p>
+                <!-- Traitement 2 -->
+                <div class="treatment-card bg-white rounded-lg shadow-md overflow-hidden animate-fadeIn"
+                    style="animation-delay: 0.2s;">
+                    <img src="images/vapeur_20de_20hammam.jpeg"
+                        alt="Traitement AGE DEFENSE" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl luxury-font text-gray-800">4 séances hammam</h3>
+                            <span class="text-[#d4af37] font-medium">120€</span>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed text-base">
+                            Découvrez les bienfaits d’une séance de hammam, idéales pour se détendre. Le hammam, avec sa vapeur chaude, relâche vos muscles, ouvre les pores et élimine les toxines, tout en apaisant l’esprit.
+Durée : 30min. 
+                        </p>
+                    </div>
+                </div>
+                
             </div>
         </div>
-    </footer>
+    </section>
+
+
+   
+
+
 
     <script>
-        // Animation pour les cartes au scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.spa-card');
-            
+        // FAQ Toggle
+        document.querySelectorAll('.bg-white.p-6.rounded-lg.shadow-sm button').forEach(button => {
+            button.addEventListener('click', function () {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('i');
+
+                content.classList.toggle('hidden');
+                icon.classList.toggle('transform');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Animation pour les cartes de soins
+        document.addEventListener('DOMContentLoaded', function () {
+            const cards = document.querySelectorAll('.treatment-card');
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.style.opacity = 1;
                     }
                 });
             }, { threshold: 0.1 });
-            
+
             cards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'all 0.6s ease';
+                card.style.opacity = 0;
                 observer.observe(card);
-            });
-            
-            // Simulation de réservation
-            const reserveButtons = document.querySelectorAll('.btn-reserver');
-            reserveButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const serviceName = this.closest('.spa-card').querySelector('h4').textContent;
-                    alert(`Vous avez choisi de réserver : ${serviceName}\n\nNotre équipe vous contactera pour confirmer votre rendez-vous.`);
-                });
             });
         });
     </script>
 </body>
+
 </html>

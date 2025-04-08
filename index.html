@@ -432,21 +432,20 @@
                     </div>
                 </div>
                 <!-- Liens directs (sans dropdown) -->
-                <a href="spa.html" class="category-item">
-                    Espace Spa
-                </a>
+                
                 <a href="dermo.html" class="category-item">
                     Dermopigmentation
                 </a>
                 <a href="manicure-pedicure.html" class="category-item">
                     Manucures & Pédicures
                 </a>
+                <a href="espace-spa.html" class="category-item">
+                  Espace spa
+              </a>
+
             </nav>
 
-            <!-- Bouton Menu Mobile (visible uniquement sur mobile) -->
-            <button id="mobile-menu-button" class="block md:hidden focus:outline-none">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
+            
         </div>
     </header>
 
@@ -838,110 +837,55 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
         </section>
+        <!-- Dermopigmentation - Manicure & Pédicure -->
+        <section id="dermopigmentation" class="animate-fade-in mb-20">
+          <div class="flex items-center mb-12">
+              <h2 class="text-3xl luxury-font text-gray-800 tracking-wide">Espace spa</h2>
+              <div class="ml-6 flex-1 border-t border-gray-200"></div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Carte 1 -->
+              <div class="service-card group">
+                  <div class="service-image"
+                      style="background-image: url('images/Diff_C3_A9rence-sauna-hammam-les-bienfaits-du-sauna-installer-un-sauna-chez-soi-Les-Jardins-en-Cascades-article.jpg');">
+                  </div>
+                  <div class="card-actions">
+                      <button class="quick-view-btn" onclick="openModal('modal9')">
+                          <i class="fas fa-eye"></i>
+                      </button>
+                  </div>
+                  <div class="p-8">
+                      <h3
+                          class="text-2xl luxury-font leading-tight mb-4 text-gray-800 group-hover:text-gold transition-colors duration-300">
+                          Forfaits sauna & hammam
+                      </h3>
+                      <p class="text-gray-600 mb-6 font-light leading-relaxed">
+                          Profitez de notre espace spa avec des forfaits incluant sauna et hammam pour une détente
+                          optimale.
+                      </p>
+                      <div class="flex justify-between items-center">
+                          <span class="text-gold font-medium text-lg"></span>
+                          <a href="espace-spa.html" class="btn-secondary inline-flex items-center">
+                              Voir nos prestations
+                              <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+
+              
+              
+          </div>
+      </section>
 
        
 
         <!-- Offres Spéciales -->
-        <section class="mb-20">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl luxury-font text-gray-800 mb-6 tracking-wide">Nos Offres Spéciales</h2>
-                <div class="gold-divider"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto font-light text-lg leading-relaxed">
-                    Profitez de nos prestations exclusives à prix privilégié
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="service-card group">
-                    <div class="service-image" style="background-image: url('');">
-                    </div>
-                    <div class="card-actions">
-                        <button class="quick-view-btn" onclick="openModal('modal11')">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                    </div>
-                    <div class="p-8">
-                        <div class="bg-gold-light text-gold-dark px-3 py-1 text-xs font-medium inline-block mb-4">
-                            OFFRE LIMITÉE
-                        </div>
-                        <h3
-                            class="text-2xl luxury-font leading-tight mb-4 text-gray-800 group-hover:text-gold transition-colors duration-300">
-                            Soin Visage + Massage
-                        </h3>
-                        <p class="text-gray-600 mb-6 font-light leading-relaxed">
-                            Une expérience complète de bien-être combinant notre soin visage signature avec un massage
-                            relaxant du dos.
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <span class="text-gold font-medium text-lg">150€</span>
-                                <span class="text-gray-400 line-through ml-2 text-sm">180€</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-card group">
-                    <div class="service-image" style="background-image: url('');">
-                    </div>
-                    <div class="card-actions">
-                        <button class="quick-view-btn" onclick="openModal('modal12')">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                    </div>
-                    <div class="p-8">
-                        <div class="bg-gold-light text-gold-dark px-3 py-1 text-xs font-medium inline-block mb-4">
-                            NOUVEAUTÉ
-                        </div>
-                        <h3
-                            class="text-2xl luxury-font leading-tight mb-4 text-gray-800 group-hover:text-gold transition-colors duration-300">
-                            Journée Spa
-                        </h3>
-                        <p class="text-gray-600 mb-6 font-light leading-relaxed">
-                            Accès illimité à l'espace spa (hammam, sauna, piscine) + 2 soins au choix + déjeuner
-                            healthy.
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <span class="text-gold font-medium text-lg">250€</span>
-                                <span class="text-gray-400 line-through ml-2 text-sm">300€</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-card group">
-                    <div class="service-image" style="background-image: url('');">
-                    </div>
-                    <div class="card-actions">
-                        <button class="quick-view-btn" onclick="openModal('modal13')">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                    </div>
-                    <div class="p-8">
-                        <div class="bg-gold-light text-gold-dark px-3 py-1 text-xs font-medium inline-block mb-4">
-                            IDÉE CADEAU
-                        </div>
-                        <h3
-                            class="text-2xl luxury-font leading-tight mb-4 text-gray-800 group-hover:text-gold transition-colors duration-300">
-                            Cadeau Découverte
-                        </h3>
-                        <p class="text-gray-600 mb-6 font-light leading-relaxed">
-                            Bon cadeau valable pour 3 soins au choix parmi notre sélection. Emballage cadeau luxueux
-                            inclus.
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <span class="text-gold font-medium text-lg">200€</span>
-                                <span class="text-gray-400 line-through ml-2 text-sm">240€</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
     </main>
 
     <!-- Exemple de Modal (vous pouvez dupliquer pour les autres) -->
