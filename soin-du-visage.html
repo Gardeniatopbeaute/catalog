@@ -201,114 +201,8 @@
 </head>
 
 <body class="bg-luxury">
-    <header class="sticky-nav py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <!-- Logo / Titre -->
-            <div class="text-xl font-bold">
-                <a href="index.html">
-                    <img src="images/Gardenia-Top-Beaute-logoMarron.png" alt="Gardenia Top Beauté Logo" class="h-10">
-                </a>
-            </div>
+    <div id="header-placeholder"></div>
 
-            <!-- Navigation Desktop (cachée sur mobile) -->
-            <nav class="hidden md:flex justify-center items-center space-x-6">
-                <!-- Accueil -->
-                <div class="relative group">
-                    <a href="index.html" class="category-item inline-flex items-center">
-                        Accueil
-                        <!-- <i class="fas fa-chevron-down text-xs ml-1"></i> -->
-                    </a>
-                </div>
-                <!-- Soins du visage -->
-                <div class="relative group">
-                    <a href="#" class="category-item inline-flex items-center">
-                        Soins du visage
-                        <i class="fas fa-chevron-down text-xs ml-1"></i>
-                    </a>
-                    <!-- Sous-menu -->
-                    <div
-                        class="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-sm z-10 border border-gray-100">
-                        <a href="soin-du-visage.html"
-                            class="block px-4 py-3 text-gray-600 hover:bg-gray-50 border-b border-gray-100">
-                            Classique
-                        </a>
-                        <a href="soin-corrections.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50">
-                            Dermo-esthétique
-                        </a>
-                        <a href="traitement-casmara.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50">
-                            Traitements Casmara
-                        </a>
-
-                    </div>
-                </div>
-                <!-- Soins du corps -->
-                <div class="relative group">
-                    <a href="#" class="category-item inline-flex items-center">
-                        Soins du corps
-                        <i class="fas fa-chevron-down text-xs ml-1"></i>
-                    </a>
-                    <div
-                        class="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-sm z-10 border border-gray-100">
-                        <a href="soin-corps-relaxants.html"
-                            class="block px-4 py-3 text-gray-600 hover:bg-gray-50 border-b border-gray-100">
-                            Relaxant
-                        </a>
-                        <a href="soin-crops-minceur.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50">
-                            Minceur
-                        </a>
-                    </div>
-                </div>
-                <!-- Épilations -->
-                <div class="relative group">
-                    <a href="#" class="category-item inline-flex items-center">
-                        Épilations
-                        <i class="fas fa-chevron-down text-xs ml-1"></i>
-                    </a>
-                    <div
-                        class="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-sm z-10 border border-gray-100">
-                        <a href="epilation.html"
-                            class="block px-4 py-3 text-gray-600 hover:bg-gray-50 border-b border-gray-100">
-                            Epilation à la cire
-                        </a>
-                        <a href="epilation-laser.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50">
-                            Epilation laser
-                        </a>
-                    </div>
-                </div>
-                <!-- Idée Cadeaux -->
-                <div class="relative group">
-                    <a href="#" class="category-item inline-flex items-center">
-                        Idée Cadeaux
-                        <i class="fas fa-chevron-down text-xs ml-1"></i>
-                    </a>
-                    <div
-                        class="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-sm z-10 border border-gray-100">
-                        <a href="cheque-cadeau.html"
-                            class="block px-4 py-3 text-gray-600 hover:bg-gray-50 border-b border-gray-100">
-                            Chèque cadeau
-                        </a>
-                        <a href="idee-cadeau.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50">
-                            Formule cadeaux
-                        </a>
-                    </div>
-                </div>
-                <!-- Liens directs (sans dropdown) -->
-                
-                <a href="dermo.html" class="category-item">
-                    Dermopigmentation
-                </a>
-                <a href="manicure-pedicure.html" class="category-item">
-                    Beauté des pieds et des mains
-                </a>
-                <a href="espace-spa.html" class="category-item">
-                  Espace spa
-              </a>
-
-            </nav>
-
-            
-        </div>
-    </header>
 
     <!-- Category Hero -->
     <section class="treatment-hero py-20 text-white">
@@ -321,6 +215,16 @@
             </div>
         </div>
     </section>
+
+    <script>
+        // Charger le header depuis header.html
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Erreur lors du chargement du header:', error));
+    </script>
 
     
 
