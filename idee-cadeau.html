@@ -20,7 +20,7 @@
             --card-bg: #ffffff;
             --border-color: #e8e3d9;
         }
-    
+
         /* Styles généraux du body */
         body {
             font-family: 'Montserrat', sans-serif;
@@ -28,12 +28,12 @@
             color: var(--text-color);
             overflow-x: hidden;
         }
-    
+
         /* Police de caractères de luxe */
         .luxury-font {
             font-family: 'Playfair Display', serif;
         }
-    
+
         /* Header */
         header {
             background-color: rgba(255, 255, 255, 0.98);
@@ -41,18 +41,18 @@
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
             border-bottom: 1px solid var(--border-color);
         }
-    
+
         /* Navigation */
         nav a {
             color: var(--text-color);
             transition: all 0.3s ease;
             position: relative;
         }
-    
+
         nav a:hover {
             color: var(--button-bg);
         }
-    
+
         nav a:after {
             content: '';
             position: absolute;
@@ -63,11 +63,11 @@
             background-color: var(--gold);
             transition: width 0.3s ease;
         }
-    
+
         nav a:hover:after {
             width: 100%;
         }
-    
+
         /* Category Navigation */
         .sticky-nav {
             position: sticky;
@@ -77,15 +77,15 @@
             backdrop-filter: blur(8px);
             border-bottom: 1px solid var(--border-color);
         }
-    
+
         .category-nav {
             scrollbar-width: none;
         }
-    
+
         .category-nav::-webkit-scrollbar {
             display: none;
         }
-    
+
         .category-item {
             position: relative;
             padding: 0.5rem 1rem;
@@ -96,12 +96,12 @@
             font-size: 0.9rem;
             font-weight: 500;
         }
-    
+
         .category-item:hover,
         .category-item.active {
             color: var(--gold);
         }
-    
+
         .category-item.active:after {
             content: '';
             position: absolute;
@@ -111,7 +111,7 @@
             height: 2px;
             background-color: var(--gold);
         }
-    
+
         /* Traitement des cartes */
         .treatment-card {
             transition: all 0.3s ease;
@@ -119,23 +119,23 @@
             border-radius: 12px;
             overflow: hidden;
         }
-    
+
         .treatment-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
         }
-    
+
         /* Divider doré */
         .gold-divider {
             height: 2px;
             background: linear-gradient(90deg, transparent, var(--gold), transparent);
         }
-    
+
         /* Fond de page de luxe */
         .bg-luxury {
             background: linear-gradient(135deg, var(--background) 0%, #e8e6e1 100%);
         }
-    
+
         /* Effet fade-in */
         @keyframes fadeIn {
             from {
@@ -147,35 +147,35 @@
                 transform: translateY(0);
             }
         }
-    
+
         .animate-fadeIn {
             animation: fadeIn 0.8s ease forwards;
         }
-    
+
         /* Hero image */
         .treatment-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/formulekdo.png') no-repeat center center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/fete-des-meres.png') no-repeat center center;
             background-size: cover;
             background-position: center;
         }
-    
+
         /* Durée du badge */
         .duration-badge {
             background-color: rgba(212, 175, 55, 0.2);
             border: 1px solid var(--gold);
         }
-    
+
         /* Etiquette de prix */
         .price-tag {
             background: linear-gradient(135deg, var(--gold) 0%, #f1da7a 100%);
         }
-    
+
         /* Éléments de bien-être */
         .benefit-item {
             position: relative;
             padding-left: 28px;
         }
-    
+
         .benefit-item:before {
             content: '';
             position: absolute;
@@ -187,7 +187,7 @@
             border-radius: 50%;
             opacity: 0.3;
         }
-    
+
         .benefit-item:after {
             content: '✓';
             position: absolute;
@@ -197,135 +197,137 @@
             font-weight: bold;
         }
     </style>
-    
+
 </head>
 
 <body class="bg-luxury">
-    <!-- Header -->
-    <div id="header-placeholder"></div>
+<!-- Header -->
+<div id="header-placeholder"></div>
 
-    <!-- Hero Section -->
-    <section class="treatment-hero py-20 text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl luxury-font mb-6 animate-fadeIn">À offrir ou à s'offrir !</h1>
-            <p class="text-xl max-w-2xl mx-auto mb-8">Pour passer un agréable moment</p>
-        </div>
-    </section>
+<!-- Hero Section -->
+<section class="treatment-hero py-20 text-white">
+    <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-6xl luxury-font mb-6 animate-fadeIn">Spéciale Fête des Mères</h1>
+        <p class="text-xl max-w-2xl mx-auto mb-8">Des idées cadeaux pour gâter toutes les mamans</p>
+    </div>
+</section>
 
-    <script>
-        // Charger le header depuis header.html
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Erreur lors du chargement du header:', error));
-    </script>
+<script>
+    // Charger le header depuis header.html
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Erreur lors du chargement du header:', error));
+</script>
 
 
 
-    <!-- Main Content : Formules Cadeaux -->
-    <section class="py-12 px-6">
-        <div class="container mx-auto">
-            <h2 class="text-3xl luxury-font text-gray-800 mb-8 text-center">Nos Formules</h2>
+<!-- Main Content : Formules Cadeaux -->
+<section class="py-12 px-6">
+    <div class="container mx-auto">
+        <h2 class="text-3xl luxury-font text-gray-800 mb-8 text-center">Nos Formules Fête des mères</h2>
 
-            <!-- Grille de 3 formules -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Formule Luxury -->
-                <div class="treatment-card bg-white p-6 text-center animate-fadeIn" style="animation-delay: 0.1s;">
-                    <h3 class="text-xl luxury-font mb-4">Formule Luxury</h3>
-                    <!-- <span class="line-through text-gray-400 mr-2">765€</span> -->
-                    <div class="text-gold-600 font-semibold text-2xl mb-4">150€</div>
-                    <ul class="space-y-2 text-gray-600 mb-4 list-disc list-inside text-left mx-auto max-w-xs">
-                        <li>1 soin du corps au choix</li>
-                        <li>1 soin du visage</li>
-                        <li>1 massage complet</li>
-                    </ul>
-                </div>
-
-                <!-- Formule Evasion -->
-                <div class="treatment-card bg-white p-6 text-center animate-fadeIn" style="animation-delay: 0.2s;">
-                    <h3 class="text-xl luxury-font mb-4">Formule Évasion</h3>
-                    <span class="line-through text-gray-400 mr-2">150€</span>
-                    <div class="text-gold-600 font-semibold text-2xl mb-4">95€</div>
-                    <ul class="space-y-2 text-gray-600 mb-4 list-disc list-inside text-left mx-auto max-w-xs">
-                        <li>1 BALLANCER (Pressothérapie) 30min</li>
-                        <li>1 soin visage ou corps (au choix)</li>
-                    </ul>
-                </div>
-
-                <!-- Formule Orientale -->
-                <div class="treatment-card bg-white p-6 text-center animate-fadeIn" style="animation-delay: 0.3s;">
-                    <h3 class="text-xl luxury-font mb-4">Formule Orientale</h3>
-                    <span class="line-through text-gray-400 mr-2">130€</span>
-                    <div class="text-gold-600 font-semibold text-2xl mb-4">99€</div>
-                    <ul class="space-y-2 text-gray-600 mb-4 list-disc list-inside text-left mx-auto max-w-xs">
-                        <li>Gommage corporel 30min</li>
-                        <li>Massage dorsal 30min</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section des options possibles -->
-    <section class="py-10 px-6 bg-white">
-        <div class="container mx-auto text-center">
-            <h3 class="text-2xl luxury-font text-gray-800 mb-6">Les options possibles avec les formules</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <!-- Liste des options -->
-                <ul class="list-disc list-inside text-left mx-auto max-w-md text-gray-700 space-y-2">
-                    <li><strong>SAUNA ou HAMMAM</strong> (30min)</li>
-                    <li><strong>MASSAGE DORSAL</strong> (30min)</li>
-                    <li><strong>GOMMAGE CORPOREL</strong> (30min)</li>
-                    <li><strong>1 BOUTEILLE DE CHAMPAGNE</strong> (40€)</li>
+        <!-- Grille de 3 formules -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Formule ORIENTALE -->
+            <div class="treatment-card bg-white p-6 text-center animate-fadeIn" style="animation-delay: 0.3s;">
+                <h3 class="text-xl luxury-font mb-4">Formule ORIENTALE</h3>
+                <span class="line-through text-gray-400 mr-2">130€</span>
+                <div class="text-gold-600 font-semibold text-2xl mb-4">99€</div>
+                <ul class="space-y-2 text-gray-600 mb-4 list-disc list-inside text-left mx-auto max-w-xs">
+                    <li>Gommage corporel 30min</li>
+                    <li>Massage dorsal 30min</li>
                 </ul>
-                <!-- Illustration optionnelle (champagne, etc.) -->
-                <div class="bg-gray-50 border border-gray-200 p-4 rounded-md mt-6 max-w-lg mx-auto shadow-sm">
-                    <p class="text-sm md:text-base text-gray-700 text-center">
-                        La location de l'espace Tea-Time pour un enterrement de jeune fille ou un anniversaire se fait
-                        sur devis.
-                    </p>
-                </div>
-
             </div>
+            <!-- Formule ROYALE -->
+            <div class="treatment-card bg-white p-6 text-center animate-fadeIn" style="animation-delay: 0.1s;">
+                <h3 class="text-xl luxury-font mb-4">Formule ROYALE</h3>
+                <span class="line-through text-gray-400 mr-2">300€</span>
+                <div class="text-gold-600 font-semibold text-2xl mb-4"> 250€</div>
+                <ul class="space-y-2 text-gray-600 mb-4 list-disc list-inside text-left mx-auto max-w-xs">
+                    <li>1 Balnéo-hydromassante </li>
+                    <li>1 Gommage corporel</li>
+                    <li>1 Massage dorsal</li>
+                    <li>1 Soin du visage</li>
+                </ul>
+            </div>
+
+            <!-- Formule EVASION -->
+            <div class="treatment-card bg-white p-6 text-center animate-fadeIn" style="animation-delay: 0.2s;">
+                <h3 class="text-xl luxury-font mb-4">Formule ÉVASION</h3>
+                <span class="line-through text-gray-400 mr-2">150€</span>
+                <div class="text-gold-600 font-semibold text-2xl mb-4">120€</div>
+                <ul class="space-y-2 text-gray-600 mb-4 list-disc list-inside text-left mx-auto max-w-xs">
+                    <li>1 Séance Hammam ou Sauna</li>
+                    <li>1 Balnéo-hydromassante </li>
+                    <li>1 Presso Ballancer </li>
+                </ul>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
-   
+<!-- Section des options possibles -->
+<section class="py-10 px-6 bg-white">
+    <div class="container mx-auto text-center">
+        <h3 class="text-2xl luxury-font text-gray-800 mb-6">Les options possibles avec les formules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <!-- Liste des options -->
+            <ul class="list-disc list-inside text-left mx-auto max-w-md text-gray-700 space-y-2">
+                <li><strong>SAUNA ou HAMMAM</strong> (30min)</li>
+                <li><strong>MASSAGE DORSAL</strong> (30min)</li>
+                <li><strong>GOMMAGE CORPOREL</strong> (30min)</li>
+                <li><strong>1 BOUTEILLE DE CHAMPAGNE</strong> (40€)</li>
+            </ul>
+            <!-- Illustration optionnelle (champagne, etc.) -->
+            <div class="bg-gray-50 border border-gray-200 p-4 rounded-md mt-6 max-w-lg mx-auto shadow-sm">
+                <p class="text-sm md:text-base text-gray-700 text-center">
+                    La location de l'espace Tea-Time pour un enterrement de jeune fille ou un anniversaire se fait
+                    sur devis.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 
 
-    <script>
-        // FAQ Toggle
-        document.querySelectorAll('.bg-white.p-6.rounded-lg.shadow-sm button').forEach(button => {
-            button.addEventListener('click', function () {
-                const content = this.nextElementSibling;
-                const icon = this.querySelector('i');
 
-                content.classList.toggle('hidden');
-                icon.classList.toggle('transform');
-                icon.classList.toggle('rotate-180');
-            });
+
+<script>
+    // FAQ Toggle
+    document.querySelectorAll('.bg-white.p-6.rounded-lg.shadow-sm button').forEach(button => {
+        button.addEventListener('click', function () {
+            const content = this.nextElementSibling;
+            const icon = this.querySelector('i');
+
+            content.classList.toggle('hidden');
+            icon.classList.toggle('transform');
+            icon.classList.toggle('rotate-180');
         });
+    });
 
-        // Apparition des cartes (si vous gardez l’animation IntersectionObserver)
-        document.addEventListener('DOMContentLoaded', function () {
-            const cards = document.querySelectorAll('.treatment-card');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            cards.forEach(card => {
-                card.style.opacity = 0; // Démarre à 0
-                observer.observe(card);
+    // Apparition des cartes (si vous gardez l’animation IntersectionObserver)
+    document.addEventListener('DOMContentLoaded', function () {
+        const cards = document.querySelectorAll('.treatment-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                }
             });
+        }, { threshold: 0.1 });
+
+        cards.forEach(card => {
+            card.style.opacity = 0; // Démarre à 0
+            observer.observe(card);
         });
-    </script>
+    });
+</script>
 </body>
 
 </html>
