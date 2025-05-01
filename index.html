@@ -341,24 +341,38 @@
             overflow: hidden;
             height: auto;
             background-color: #f9f7f4;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin: 2rem 0;
         }
 
         .slider-container {
             display: flex;
-            transition: transform 0.5s ease;
+            transition: transform 0.8s ease-in-out;
             height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .slider-slide {
             min-width: 100%;
             display: flex;
-            height: 100%;
+            height: 600px; /* Hauteur fixe pour tous les slides */
         }
 
         .slider-image {
             width: 50%;
             background-size: cover;
             background-position: center;
+            min-height: 600px; /* Hauteur minimale fixe */
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Effet d'animation sur les images au survol */
+        .slider-slide:hover .slider-image {
+            transform: scale(1.05);
+            transition: transform 8s ease;
         }
 
         .slider-content {
@@ -367,6 +381,8 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            min-height: 600px; /* Hauteur minimale fixe */
+            overflow-y: auto; /* Permet de scroller si le contenu est trop long */
         }
 
         .slider-nav {
@@ -375,21 +391,31 @@
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 0.5rem;
+            gap: 0.8rem;
             z-index: 10;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .slider-dot {
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background-color: rgba(197, 168, 125, 0.3);
             cursor: pointer;
             transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .slider-dot:hover {
+            transform: scale(1.2);
         }
 
         .slider-dot.active {
             background-color: var(--gold);
+            border-color: rgba(212, 175, 55, 0.3);
             transform: scale(1.2);
         }
 
@@ -397,9 +423,9 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.8);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -409,11 +435,13 @@
             color: var(--gold);
             font-size: 1.2rem;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .slider-arrow:hover {
             background-color: white;
             transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
         }
 
         .slider-arrow.prev {
@@ -435,23 +463,125 @@
             margin-bottom: 1rem;
         }
 
+        .price-tag {
+            position: absolute;
+            top: 30px;
+            right: -15px;
+            background-color: var(--gold);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transform: rotate(5deg);
+            z-index: 20;
+            transition: transform 0.3s ease;
+        }
+
+        .price-tag:before {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: -10px;
+            width: 15px;
+            height: 10px;
+            background-color: #8B7513;
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+        }
+
+        .price-tag:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        .price-highlight {
+            display: inline-block;
+            background-color: var(--gold);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+            }
+
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .price-tag {
+                top: 20px;
+                right: 10px;
+                padding: 0.6rem 1.2rem;
+                font-size: 1.5rem;
+            }
+
+            .price-highlight {
+                font-size: 1rem;
+                padding: 0.2rem 0.6rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .promo-slider {
                 height: auto;
+                margin: 1rem 0;
+                border-radius: 6px;
             }
 
             .slider-slide {
                 flex-direction: column;
+                height: auto;
+                min-height: 700px;
             }
 
             .slider-image,
             .slider-content {
                 width: 100%;
-                height: 300px;
+                min-height: 350px;
+            }
+
+            .slider-image {
+                border-radius: 6px 6px 0 0;
             }
 
             .slider-content {
                 padding: 2rem;
+                overflow-y: auto;
+            }
+
+            .slider-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .slider-arrow.prev {
+                left: 1rem;
+            }
+
+            .slider-arrow.next {
+                right: 1rem;
+            }
+
+            .slider-nav {
+                bottom: 1rem;
+                padding: 0.3rem 0.8rem;
             }
         }
     </style>
@@ -512,42 +642,35 @@
                         </li>
                     </ul>
                     <div class="flex space-x-4">
-                        <a href="soin-du-visage.html" class="btn-primary">En savoir plus</a>
-                        <!-- <a href="#" class="btn-secondary">En savoir plus</a> -->
+                        <a href="soin-du-visage.html" class="btn-primary" style="animation: pulse 2s infinite;">Voir toutes nos prestations</a>  
                     </div>
                 </div>
             </div>
 
             <!-- Slide 2 -->
             <div class="slider-slide">
-                <div class="slider-image" style="background-image: url('images/laser.jpg');"></div>
+                <div class="slider-image" style="background-image: url('images/fete-des-meres.png');"></div>
                 <div class="slider-content">
-                    <span class="promo-tag">Innovation</span>
-                    <h2 class="text-4xl luxury-font text-gray-800 mb-4">Les 4 avantages de l'épilation au laser</h2>
+                    <span class="promo-tag">Fête des Mères</span>
+                    <h2 class="text-4xl luxury-font text-gray-800 mb-4">Offres Spéciales Fête des Mères</h2>
                     <p class="text-gray-600 mb-6 leading-relaxed">
-                        Transformez votre routine beauté avec l'épilation au laser. Cette technologie avancée offre une solution permanente aux problèmes de pilosité indésirable, évitant coupures et irritations fréquentes. Profitez d'une peau délicieusement lisse et impeccable en toute saison. Au-delà du confort quotidien retrouvé, c'est un investissement judicieux qui vous fait économiser temps et argent sur le long terme. Choisissez l'épilation au laser et savourez une liberté beauté incomparable.                    </p>
+                        Des idées cadeaux pour gâter toutes les mamans</p>
                     <ul class="mb-8 space-y-2">
                         <li class="flex items-start">
                             <i class="fas fa-check text-gold mr-2 mt-1"></i>
-                            <span>Résultats durables et réduction permanente des poils</span>
+                            <span>Formule ORIENTALE</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-gold mr-2 mt-1"></i>
-                            <span>Peau douce et sans irritations</span>
+                            <span>Formule ROYALE</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-gold mr-2 mt-1"></i>
-                            <span>Économie à long terme</span>
+                            <span>Formule ÉVASION</span>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-gold mr-2 mt-1"></i>
-                            <span>Gain de temps</span>
-                        </li>
-
                     </ul>
                     <div class="flex space-x-4">
-                        <a href="epilation-laser.html" class="btn-primary">Découvrir</a>
-                        <!-- <a href="#" class="btn-secondary">Nos forfaits</a> -->
+                        <a href="idee-cadeau.html" class="btn-primary" style="animation: pulse 2s infinite;">Voir nos formules cadeaux</a>  
                     </div>
                 </div>
             </div>
@@ -555,34 +678,32 @@
             <!-- Slide 3 -->
             <div class="slider-slide">
                 <div class="slider-image"
-                    style="background-image: url('images/dermopig.jpg');">
+                    style="background-image: url('images/minceur.jpg');">
+                    <div class="price-tag">150€</div>
                 </div>
                 <div class="slider-content">
-                    <span class="promo-tag">Innovation</span>
-                    <h2 class="text-4xl luxury-font text-gray-800 mb-4">Les 4 avantages de la Dermopigmentation</h2>
+                    <span class="promo-tag">Soin minceur</span>
+                    <h2 class="text-4xl luxury-font text-gray-800 mb-4">Soin découverte “Body FORME”</h2>
                     <p class="text-gray-600 mb-6 leading-relaxed">
-                        Révélez votre beauté naturelle grâce à la dermopigmentation. Finies les routines maquillage interminables ! Offrez-vous des sourcils parfaitement dessinés, des lèvres subtilement colorées et un regard intensifié qui restent impeccables jour après jour. Cette solution sur-mesure corrige les imperfections et harmonise vos traits pour une confiance renouvelée. Simplifiez-vous la vie tout en sublimant votre visage !                    </p>
+                    Découvrez nos soins minceur sur la zone de votre choix ! <br>
+
+                    Ventre – Cuisses – Fesses - Bras <span class="price-highlight">150€</span>                </p>
                     <ul class="mb-8 space-y-2">
                         <li class="flex items-start">
                             <i class="fas fa-check text-gold mr-2 mt-1"></i>
-                            <span>Résultats naturels et durables</span>
+                            <span>Le Soin SLIMMING</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-gold mr-2 mt-1"></i>
-                            <span>Correction des imperfections</span>
+                            <span>Le Soin Lypo-Sculpt </span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-gold mr-2 mt-1"></i>
-                            <span>Confiance en soi</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-gold mr-2 mt-1"></i>
-                            <span>Gain de temps</span>
+                            <span>Le Soin SlimWave </span>
                         </li>
                     </ul>
                     <div class="flex space-x-4">
-                        <a href="dermo.html" class="btn-primary">Voir nos prestations</a>
-                        <!-- <a href="#" class="btn-secondary">Voir les témoignages</a> -->
+                        <a href="soin-crops-minceur.html" class="btn-primary" style="animation: pulse 2s infinite;">Voir toutes nos prestations</a>  
                     </div>
                 </div>
             </div>
